@@ -1,0 +1,40 @@
+.block-editor-url-input,
+.block-editor-link-control {
+    min-width: auto !important;
+}
+.block-editor-link-control__field {
+    margin: 16px 0 !important;
+}
+
+.framos-upload-btn {
+    width: 100%;
+    display: block;
+    border: 1px solid #ccc;
+}
+
+.framos-preview {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.framos-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+button.framos-edit-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: #fff;
+    border: 1px solid #ccc;
+    width: 36px;
+    height: 36px;
+    border-radius: 5px;
+    cursor: pointer;
+}

@@ -1,0 +1,83 @@
+{
+    "apiVersion": 3,
+    "name": "framos/full-bg",
+    "version": "1.0.0",
+    "title": "Full BG",
+    "category": "framos-blocks",
+    "description": "A full-width background block with a heading, text, and two buttons.",
+    "supports": {
+        "html": false,
+        "anchor": true,
+        "align": ["wide", "full"]
+    },
+    "example": {
+        "attributes": {
+            "preview": true
+        },
+        "viewportWidth": 432
+    },
+    "attributes": {
+        "containerClasses": {
+            "type": "array",
+            "default": ["bg-gray-900"]
+        },
+        "containerBgImage": {
+            "type": "object",
+            "default": {
+                "url": ""
+            }
+        },
+        "heading": {
+            "type": "string",
+            "default": "Boost your productivity today."
+        },
+        "headingLevel": {
+            "type": "string",
+            "default": "h2"
+        },
+        "headingClasses": {
+            "type": "array",
+            "default": []
+        },
+        "text": {
+            "type": "string",
+            "default": "Incididunt sint fugiat pariatur cupidatat consectetur sit cillum anim id veniam aliqua proident excepteur commodo do ea."
+        },
+        "textClasses": {
+            "type": "array",
+            "default": []
+        },
+        "primaryButtonText": {
+            "type": "string",
+            "default": "Get started"
+        },
+        "primaryButtonUrl": {
+            "type": "object",
+            "default": {
+                "url": "#",
+                "isExternal": false
+            }
+        },
+        "primaryButtonClasses": {
+            "type": "array",
+            "default": []
+        },
+        "secondaryButtonText": {
+            "type": "string",
+            "default": "Learn more"
+        },
+        "secondaryButtonUrl": {
+            "type": "object",
+            "default": {
+                "url": "#",
+                "isExternal": false
+            }
+        },
+        "secondaryButtonClasses": {
+            "type": "array",
+            "default": []
+        }
+    },
+    "textdomain": "framos-custom-blocks",
+    "editorScript": "file:./index.js"
+}

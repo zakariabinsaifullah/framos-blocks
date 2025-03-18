@@ -1,0 +1,44 @@
+{
+    "name": "framos-custom-blocks",
+    "version": "1.0.0",
+    "description": "custom gutenberg blocks for framos",
+    "main": "index.js",
+    "scripts": {
+        "start": "wp-scripts start",
+        "build": "wp-scripts build",
+        "format": "wp-scripts format",
+        "lint:css": "wp-scripts lint-style",
+        "lint:js": "wp-scripts lint-js",
+        "packages-update": "wp-scripts packages-update",
+        "plugin-zip": "wp-scripts plugin-zip",
+        "make-pot": "wp i18n make-pot . languages/framos-custom-blocks.pot --exclude=node_modules,assets,build",
+        "zip-plugin": "cd .. && zip -r framos-custom-blocks.zip framos-custom-blocks -x \"framos-custom-blocks/node_modules/*\" \"framos-custom-blocks/src/*\" \"framos-custom-blocks/.git/*\" \"framos-custom-blocks/.vscode/*\" \"framos-custom-blocks/.github/*\" \"framos-custom-blocks/.DS_Store/\" \"framos-custom-blocks/**/.DS_Store/*\" \"framos-custom-blocks/package.json\"  \"framos-custom-blocks/readme.md\" \"framos-custom-blocks/package-lock.json\" \"framos-custom-blocks/webpack.config.js\" \"framos-custom-blocks/.gitignore\" \"framos-custom-blocks/.gitattributes\" \"framos-custom-blocks/.editorconfig\" \"framos-custom-blocks/.eslintrc\" \"framos-custom-blocks/.editorconfig\" \"framos-custom-blocks/.prettierrc\""
+    },
+    "prettier": {
+        "arrowParens": "avoid",
+        "bracketSpacing": true,
+        "htmlWhitespaceSensitivity": "css",
+        "insertPragma": false,
+        "jsxBracketSameLine": false,
+        "jsxSingleQuote": false,
+        "printWidth": 140,
+        "proseWrap": "preserve",
+        "quoteProps": "as-needed",
+        "requirePragma": false,
+        "semi": true,
+        "singleQuote": true,
+        "tabWidth": 4,
+        "trailingComma": "none",
+        "useTabs": false,
+        "rangeStart": 0
+    },
+    "stylelint": {
+        "extends": "@wordpress/stylelint-config/scss"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "@wordpress/scripts": "^30.12.0",
+        "classnames": "^2.5.1"
+    }
+}
