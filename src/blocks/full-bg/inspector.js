@@ -3,7 +3,7 @@
  */
 import { InspectorControls, __experimentalLinkControl as LinkControl, MediaUpload } from '@wordpress/block-editor';
 
-import { FormTokenField, PanelBody, SelectControl, TextControl, TextareaControl, BaseControl } from '@wordpress/components';
+import { BaseControl, FormTokenField, PanelBody, SelectControl, TextControl, TextareaControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 import { HEADINGS } from '../../constants';
 
@@ -34,7 +34,7 @@ const Inspector = ({ attributes, setAttributes }) => {
                                 <MediaUpload
                                     onSelect={media => setAttributes({ containerBgImage: media })}
                                     type="image"
-                                    value={containerBgImage}
+                                    value={containerBgImage?.id}
                                     render={({ open }) => (
                                         <button className="framos-edit-btn" title={__('Edit Image', 'framos')} onClick={open}>
                                             <span className="dashicons dashicons-edit"></span>

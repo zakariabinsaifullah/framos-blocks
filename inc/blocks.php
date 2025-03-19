@@ -6,4 +6,6 @@
  return [
     'cta',
     'full-bg',
+    'accordion',
+    'content-image'
  ];

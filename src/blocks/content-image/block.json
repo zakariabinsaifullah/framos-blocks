@@ -1,10 +1,10 @@
 {
     "apiVersion": 3,
-    "name": "framos/full-bg",
+    "name": "framos/content-image",
     "version": "1.0.0",
-    "title": "Full BG",
+    "title": "Content Image",
     "category": "framos-blocks",
-    "description": "A full-width background block with a heading, text, and two buttons.",
+    "description": "Display content and image side by side.",
     "supports": {
         "html": false,
         "anchor": true,
@@ -21,12 +21,9 @@
             "type": "array",
             "default": []
         },
-        "containerBgImage": {
-            "type": "object"
-        },
         "heading": {
             "type": "string",
-            "default": "Boost your productivity today."
+            "default": "Why Choose FRAMOS for Global Shutter Image Sensors Solutions?"
         },
         "headingLevel": {
             "type": "string",
@@ -44,37 +41,27 @@
             "type": "array",
             "default": []
         },
-        "primaryButtonText": {
-            "type": "string",
-            "default": "Get started"
+        "image": {
+            "type": "object"
         },
-        "primaryButtonUrl": {
-            "type": "object",
-            "default": {
-                "url": "#",
-                "isExternal": false
-            }
-        },
-        "primaryButtonClasses": {
+        "layoutClasses": {
             "type": "array",
             "default": []
         },
-        "secondaryButtonText": {
-            "type": "string",
-            "default": "Learn more"
-        },
-        "secondaryButtonUrl": {
-            "type": "object",
-            "default": {
-                "url": "#",
-                "isExternal": false
-            }
-        },
-        "secondaryButtonClasses": {
+        "contentSideClasses": {
             "type": "array",
             "default": []
+        },
+        "imageSideClasses": {
+            "type": "array",
+            "default": []
+        },
+        "changeOrder": {
+            "type": "boolean",
+            "default": false
         }
     },
     "textdomain": "framos-custom-blocks",
-    "editorScript": "file:./index.js"
+    "editorScript": "file:./index.js",
+    "viewScript": "file:./view.js"
 }

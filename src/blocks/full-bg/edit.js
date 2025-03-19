@@ -1,11 +1,10 @@
 /**
  * WordPress dependencies
  */
-import { BlockControls, RichText, useBlockProps } from '@wordpress/block-editor';
+import { BlockControls, useBlockProps } from '@wordpress/block-editor';
 import { DropdownMenu, ToolbarGroup } from '@wordpress/components';
 import { Fragment } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
-import classnames from 'classnames';
 import Inspector from './inspector';
 
 /**
@@ -13,6 +12,7 @@ import Inspector from './inspector';
  */
 export default function Edit({ attributes, setAttributes, clientId }) {
     const {
+        containerBgImage,
         containerClasses,
         heading,
         headingLevel,
@@ -47,13 +47,19 @@ export default function Edit({ attributes, setAttributes, clientId }) {
                 </ToolbarGroup>
             </BlockControls>
             <div {...blockProps}>
-                <div className="bg-gray-900">
+                <div
+                    className={classnames('bg-gray-900', {
+                        [containerClasses.join(' ')]: containerClasses.length > 0 && containerClasses
+                    })}
+                >
                     <div className="relative isolate overflow-hidden pt-14">
-                        <img
-                            src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2830&q=80&blend=111827&sat=-100&exp=15&blend-mode=multiply"
-                            alt=""
-                            className="absolute inset-0 -z-10 size-full object-cover"
-                        />
+                        {containerBgImage && containerBgImage?.url && (
+                            <img
+                                src={containerBgImage.url}
+                                alt={containerBgImage.alt || heading}
+                                className="absolute inset-0 -z-10 size-full object-cover"
+                            />
+                        )}
                         <div
                             className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
                             aria-hidden="true"
