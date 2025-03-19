@@ -6,4 +6,5 @@
  return [
     'cta',
     'full-bg',
+    'offset',
  ];
