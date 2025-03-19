@@ -1,10 +1,10 @@
 {
     "apiVersion": 3,
-    "name": "framos/full-bg",
+    "name": "framos/product",
     "version": "1.0.0",
-    "title": "Full BG",
+    "title": "Product",
     "category": "framos-blocks",
-    "description": "A full-width background block with a heading, text, and two buttons.",
+    "description": "Call to action block",
     "supports": {
         "html": false,
         "anchor": true,
@@ -21,52 +21,46 @@
             "type": "array",
             "default": ["bg-gray-900"]
         },
-        "heading": {
+        "subtitle": {
             "type": "string",
-            "default": "Boost your productivity today."
+            "default": "Deploy faster"
+        },
+        "subtitleClasses": {
+            "type": "array",
+            "default": []
+        },
+        "title": {
+            "type": "string",
+            "default": "A better workflow"
+        },
+        "titleClass": {
+            "type": "array",
+            "default": []
         },
         "headingLevel": {
             "type": "string",
             "default": "h2"
         },
-        "headingClasses": {
+        "desc": {
+            "type": "string",
+            "default": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione."
+        },
+        "descClass": {
             "type": "array",
             "default": []
         },
-        "text": {
-            "type": "string",
-            "default": "Incididunt sint fugiat pariatur cupidatat consectetur sit cillum anim id veniam aliqua proident excepteur commodo do ea."
-        },
-        "textClasses": {
+        "photoClass": {
             "type": "array",
             "default": []
         },
-        "primaryButtonText": {
-            "type": "string",
-            "default": "Get started"
-        },
-        "primaryButtonUrl": {
+        "photo": {
             "type": "object",
             "default": {
-                "url": "#",
-                "isExternal": false
+                "url": "",
+                "id": ""
             }
         },
-        "primaryButtonClasses": {
-            "type": "array",
-            "default": []
-        },
-        "secondaryButtonText": {
-            "type": "string",
-            "default": "Learn more"
-        },
-        "secondaryButtonUrl": {
-            "type": "object",
-            "default": {
-                "url": "#",
-                "isExternal": false
-            }
-        },
+
         "secondaryButtonClasses": {
             "type": "array",
             "default": []

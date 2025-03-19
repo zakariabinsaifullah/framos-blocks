@@ -6,4 +6,6 @@
  return [
     'cta',
     'full-bg',
+    'product',
+    'product-list'
  ];
