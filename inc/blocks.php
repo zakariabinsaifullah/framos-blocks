@@ -7,5 +7,6 @@
     'cta',
     'full-bg',
     'product',
-    'product-list'
+    'product-list',
+    'product-left'
  ];

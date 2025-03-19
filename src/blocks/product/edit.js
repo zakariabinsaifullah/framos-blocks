@@ -42,17 +42,12 @@ export default function Edit({ attributes, setAttributes, clientId }) {
     // Block Props
     const blockProps = useBlockProps();
     // Inner blocks
-    const innerBlockProps = useInnerBlocksProps(
-        {
-            className: 'btns-group'
-        },
-        {
-            allowedBlocks: ['framos/product-list'],
-            template: [['framos/product-list'], ['framos/product-list']],
-            renderAppender: false,
-            templateLock: false
-        }
-    );
+    const innerBlockProps = useInnerBlocksProps({
+        allowedBlocks: ['framos/product-list'],
+        template: [['framos/product-list'], ['framos/product-list']],
+        renderAppender: false,
+        templateLock: false
+    });
 
     // Append Button
     const childBlocks = select('core/block-editor').getBlocks(clientId);

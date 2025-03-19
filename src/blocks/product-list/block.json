@@ -26,6 +26,13 @@
         "listClass": {
             "type": "string",
             "default": []
+        },
+        "icon": {
+            "type": "object"
+        },
+        "iconClass": {
+            "type": "string",
+            "default": []
         }
     },
     "textdomain": "framos-custom-blocks",
