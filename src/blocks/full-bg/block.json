@@ -26,7 +26,7 @@
         },
         "heading": {
             "type": "string",
-            "default": "Boost your productivity today."
+            "default": "Data to enrich your online business"
         },
         "headingLevel": {
             "type": "string",
@@ -36,9 +36,17 @@
             "type": "array",
             "default": []
         },
+        "subHeading": {
+            "type": "string",
+            "default": "Announcing our next round of funding"
+        },
+        "subHeadingClasses": {
+            "type": "array",
+            "default": []
+        },
         "text": {
             "type": "string",
-            "default": "Incididunt sint fugiat pariatur cupidatat consectetur sit cillum anim id veniam aliqua proident excepteur commodo do ea."
+            "default": "Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat."
         },
         "textClasses": {
             "type": "array",

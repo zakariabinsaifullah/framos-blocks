@@ -1,11 +1,13 @@
 /**
  * WordPress dependencies
  */
-import { BlockControls, useBlockProps } from '@wordpress/block-editor';
+import { BlockControls, RichText, useBlockProps } from '@wordpress/block-editor';
 import { DropdownMenu, ToolbarGroup } from '@wordpress/components';
 import { Fragment } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import Inspector from './inspector';
+
+import classnames from 'classnames';
 
 /**
  * Edit function
@@ -17,6 +19,8 @@ export default function Edit({ attributes, setAttributes, clientId }) {
         heading,
         headingLevel,
         headingClasses,
+        subHeading,
+        subHeadingClasses,
         text,
         textClasses,
         primaryButtonText,
@@ -75,31 +79,82 @@ export default function Edit({ attributes, setAttributes, clientId }) {
                         <div className="mx-auto max-w-7xl px-6 lg:px-8">
                             <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
                                 <div className="hidden sm:mb-8 sm:flex sm:justify-center">
-                                    <div className="relative rounded-full px-3 py-1 text-sm/6 text-gray-400 ring-1 ring-white/10 hover:ring-white/20">
-                                        Announcing our next round of funding.{' '}
-                                        <a href="#" className="font-semibold text-white">
-                                            <span className="absolute inset-0" aria-hidden="true" />
-                                            Read more <span aria-hidden="true">→</span>
-                                        </a>
-                                    </div>
+                                    <RichText
+                                        tagName="div"
+                                        className={classnames(
+                                            'relative rounded-full px-3 py-1 text-sm/6 text-gray-400 ring-1 ring-white/10 hover:ring-white/20',
+                                            {
+                                                [subHeadingClasses.join(' ')]: subHeadingClasses.length > 0 && subHeadingClasses
+                                            }
+                                        )}
+                                        value={subHeading}
+                                        onChange={v =>
+                                            setAttributes({
+                                                subHeading: v
+                                            })
+                                        }
+                                        placeholder={__('Add a subheading', 'framos')}
+                                    />
                                 </div>
                                 <div className="text-center">
-                                    <h1 className="text-balance text-5xl font-semibold tracking-tight text-white sm:text-7xl">
-                                        Data to enrich your online business
-                                    </h1>
-                                    <p className="mt-8 text-pretty text-lg font-medium text-gray-400 sm:text-xl/8">
-                                        Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt
-                                        amet fugiat veniam occaecat.
-                                    </p>
+                                    <RichText
+                                        tagName={headingLevel}
+                                        className={classnames('text-balance text-5xl font-semibold tracking-tight text-white sm:text-7xl', {
+                                            [headingClasses.join(' ')]: headingClasses.length > 0 && headingClasses
+                                        })}
+                                        value={heading}
+                                        onChange={v =>
+                                            setAttributes({
+                                                heading: v
+                                            })
+                                        }
+                                        placeholder={__('Add a heading', 'framos')}
+                                    />
+                                    <RichText
+                                        tagName="p"
+                                        className={classnames('mt-8 text-pretty text-lg font-medium text-gray-400 sm:text-xl/8', {
+                                            [textClasses.join(' ')]: textClasses.length > 0 && textClasses
+                                        })}
+                                        value={text}
+                                        onChange={v =>
+                                            setAttributes({
+                                                text: v
+                                            })
+                                        }
+                                        placeholder={__('Add description', 'framos')}
+                                    />
                                     <div className="mt-10 flex items-center justify-center gap-x-6">
                                         <a
                                             href="#"
-                                            className="rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
+                                            className={classnames(
+                                                'rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400',
+                                                {
+                                                    [primaryButtonClasses.join(' ')]:
+                                                        primaryButtonClasses.length > 0 && primaryButtonClasses
+                                                }
+                                            )}
                                         >
-                                            Get started
+                                            <RichText
+                                                tagName="span"
+                                                value={primaryButtonText}
+                                                onChange={v => setAttributes({ primaryButtonText: v })}
+                                                placeholder={__('button text', 'framos')}
+                                            />
                                         </a>
-                                        <a href="#" className="text-sm/6 font-semibold text-white">
-                                            Learn more <span aria-hidden="true">→</span>
+                                        <a
+                                            href="#"
+                                            className={classnames('text-sm/6 font-semibold text-white', {
+                                                [secondaryButtonClasses.join(' ')]:
+                                                    secondaryButtonClasses.length > 0 && secondaryButtonClasses
+                                            })}
+                                        >
+                                            <RichText
+                                                tagName="span"
+                                                value={secondaryButtonText}
+                                                onChange={v => setAttributes({ secondaryButtonText: v })}
+                                                placeholder={__('button text', 'framos')}
+                                            />
+                                            <span aria-hidden="true">→</span>
                                         </a>
                                     </div>
                                 </div>

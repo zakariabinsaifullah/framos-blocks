@@ -14,6 +14,8 @@ const Inspector = ({ attributes, setAttributes }) => {
         heading,
         headingLevel,
         headingClasses,
+        subHeading,
+        subHeadingClasses,
         text,
         textClasses,
         primaryButtonText,
@@ -61,6 +63,20 @@ const Inspector = ({ attributes, setAttributes }) => {
                         onChange={v => setAttributes({ containerClasses: v.map(className => className.replace(/\s+/g, '-')) })}
                         label={__('Classes', 'framos')}
                         help={__('Add classes to the container', 'framos')}
+                    />
+                </PanelBody>
+                <PanelBody title={__('Sub Heading', 'framos')} initialOpen={false}>
+                    <TextControl
+                        label={__('Text', 'framos')}
+                        value={subHeading}
+                        onChange={v => setAttributes({ subHeading: v })}
+                        placeholder={__('Add a subheading', 'framos')}
+                    />
+                    <FormTokenField
+                        value={subHeadingClasses}
+                        onChange={v => setAttributes({ subHeadingClasses: v.map(className => className.replace(/\s+/g, '-')) })}
+                        label={__('Classes', 'framos')}
+                        help={__('Add classes to the subheading.', 'framos')}
                     />
                 </PanelBody>
                 <PanelBody title={__('Heading', 'framos')} initialOpen={false}>
