@@ -1,0 +1,71 @@
+{
+    "apiVersion": 3,
+    "name": "framos/product-left",
+    "version": "1.0.0",
+    "title": "Product-left",
+    "category": "framos-blocks",
+    "description": "Call to action block",
+    "supports": {
+        "html": false,
+        "anchor": true,
+        "align": ["wide", "full"]
+    },
+    "example": {
+        "attributes": {
+            "preview": true
+        },
+        "viewportWidth": 432
+    },
+    "attributes": {
+        "containerClasses": {
+            "type": "array",
+            "default": []
+        },
+        "subtitle": {
+            "type": "string",
+            "default": "Deploy faster"
+        },
+        "subtitleClasses": {
+            "type": "array",
+            "default": []
+        },
+        "title": {
+            "type": "string",
+            "default": "A better workflow"
+        },
+        "titleClass": {
+            "type": "array",
+            "default": []
+        },
+        "headingLevel": {
+            "type": "string",
+            "default": "h2"
+        },
+        "desc": {
+            "type": "string",
+            "default": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione."
+        },
+        "descClass": {
+            "type": "array",
+            "default": []
+        },
+        "photoClass": {
+            "type": "array",
+            "default": []
+        },
+        "photo": {
+            "type": "object",
+            "default": {
+                "url": "",
+                "id": ""
+            }
+        },
+
+        "secondaryButtonClasses": {
+            "type": "array",
+            "default": []
+        }
+    },
+    "textdomain": "framos-custom-blocks",
+    "editorScript": "file:./index.js"
+}
