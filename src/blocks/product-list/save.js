@@ -15,9 +15,9 @@ export default function Save({ attributes }) {
 
     return (
         <div {...blockProps}>
-            <dl class="mt-10 max-w-xl space-y-8 text-base/7 text-gray-600 lg:max-w-none">
-                <div class="relative pl-9">
-                    <dt class="inline font-semibold text-gray-900">
+            <dl className="mt-10 max-w-xl space-y-8 text-base/7 text-gray-600 lg:max-w-none">
+                <div className="relative pl-9 ">
+                    <dt className="inline font-semibold text-gray-900">
                         {icon && icon.url && (
                             <img
                                 src={icon.url}
@@ -30,6 +30,7 @@ export default function Save({ attributes }) {
                     </dt>
 
                     <RichText.Content
+                        tagName="span"
                         className={classnames('inline', {
                             [listClass.join(' ')]: listClass.length > 0 && listClass
                         })}

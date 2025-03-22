@@ -1,0 +1,51 @@
+{
+    "apiVersion": 3,
+    "name": "framos/grid-centerd-child",
+    "version": "1.0.0",
+    "title": "Grid-centerd-child",
+    "category": "framos-blocks",
+    "description": "Call to action block",
+    "parent": ["framos/grid-centerd"],
+    "supports": {
+        "html": false,
+        "anchor": true,
+        "align": ["wide", "full"]
+    },
+    "example": {
+        "attributes": {
+            "preview": true
+        },
+        "viewportWidth": 432
+    },
+    "attributes": {
+        "containerClasses": {
+            "type": "array",
+            "default": []
+        },
+        "listText": {
+            "type": "string",
+            "default": " Advanced security"
+        },
+        "listClass": {
+            "type": "string",
+            "default": []
+        },
+        "listDesc": {
+            "type": "string",
+            "default": "Arcu egestas dolor vel iaculis in ipsum mauris. Tincidunt mattis aliquet hac quis. Id hac maecenas ac donec pharetra eget."
+        },
+        "liDesClass": {
+            "type": "string",
+            "default": []
+        },
+        "icon": {
+            "type": "object"
+        },
+        "iconClass": {
+            "tyepe": "string",
+            "default": []
+        }
+    },
+    "textdomain": "framos-custom-blocks",
+    "editorScript": "file:./index.js"
+}

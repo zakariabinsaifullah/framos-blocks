@@ -1,15 +1,7 @@
 /**
  * WordPress dependencies
  */
-import {
-    BlockControls,
-    RichText,
-    useBlockProps,
-    MediaPlaceholder,
-    MediaUpload,
-    innerBlockProps,
-    useInnerBlocksProps
-} from '@wordpress/block-editor';
+import { BlockControls, RichText, useBlockProps, MediaPlaceholder, MediaUpload, useInnerBlocksProps } from '@wordpress/block-editor';
 import { DropdownMenu, ToolbarGroup, ToolbarButton } from '@wordpress/components';
 import { createBlock } from '@wordpress/blocks';
 import { dispatch, select } from '@wordpress/data';
@@ -22,38 +14,28 @@ import Inspector from './inspector';
  * Edit function
  */
 export default function Edit({ attributes, setAttributes, clientId }) {
-    const {
-        containerClasses,
-        subtitle,
-        subtitleClasses,
-        // title
-        title,
-        titleClass,
-        headingLevel,
-        // desc
-        desc,
-        descClass,
-        // photo,
-        photo,
-        photoSize,
-        photoClass
-    } = attributes;
+    const { containerClasses, subtitle, subtitleClasses, title, titleClass, headingLevel, desc, descClass, photo, photoSize, photoClass } =
+        attributes;
 
     // Block Props
     const blockProps = useBlockProps();
     // Inner blocks
-    const innerBlockProps = useInnerBlocksProps({
-        allowedBlocks: ['framos/product-list'],
-        template: [['framos/product-list'], ['framos/product-list']],
-        renderAppender: false,
-        templateLock: false
-    });
+    const innerBlockProps = useInnerBlocksProps(
+        {
+            className: 'btns-group'
+        },
+        {
+            allowedBlocks: ['framos/product-list'],
+            template: [['framos/product-list'], ['framos/product-list']],
+            renderAppender: false,
+            templateLock: false
+        }
+    );
 
     // Append Button
-    const childBlocks = select('core/block-editor').getBlocks(clientId);
     const appendBtn = () => {
         const newBlock = createBlock('framos/product-list', {});
-        dispatch('core/block-editor').insertBlock(newBlock, childBlocks.length, clientId);
+        dispatch('core/block-editor').insertBlock(newBlock, select('core/block-editor').getBlockOrder(clientId).length, clientId);
     };
 
     return (
@@ -109,7 +91,7 @@ export default function Edit({ attributes, setAttributes, clientId }) {
                                         })}
                                         value={desc}
                                         onChange={v => setAttributes({ desc: v })}
-                                        placeholder={__('Add a title', 'framos')}
+                                        placeholder={__('Add a description', 'framos')}
                                     />
                                     <dl className="mt-10 max-w-xl space-y-8 text-base/7 text-gray-600 lg:max-w-none">
                                         <div {...innerBlockProps} />

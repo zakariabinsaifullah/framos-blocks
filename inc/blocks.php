@@ -8,5 +8,8 @@
     'full-bg',
     'product',
     'product-list',
-    'product-left'
+    'product-left',
+    'grid-centerd',
+    'grid-centerd-child'
+    
  ];
