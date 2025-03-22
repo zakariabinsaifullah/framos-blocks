@@ -1,63 +1,35 @@
 /**
  * WordPress dependencies
  */
-import { InspectorControls, __experimentalLinkControl as LinkControl, MediaUpload } from '@wordpress/block-editor';
+import { InspectorControls, __experimentalLinkControl as LinkControl, MediaUpload, MediaPlaceholder } from '@wordpress/block-editor';
 
-import { BaseControl, FormTokenField, PanelBody, SelectControl, TextControl, TextareaControl } from '@wordpress/components';
+import { FormTokenField, PanelBody, SelectControl, TextControl, TextareaControl, Button } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 import { HEADINGS } from '../../constants';
 
 const Inspector = ({ attributes, setAttributes }) => {
     const {
-        containerBgImage,
         containerClasses,
+
         heading,
         headingLevel,
         headingClasses,
-        subHeading,
-        subHeadingClasses,
+        subTitle,
+        subTitleClasses,
         text,
         textClasses,
         primaryButtonText,
         primaryButtonUrl,
         primaryButtonClasses,
-        secondaryButtonText,
-        secondaryButtonUrl,
-        secondaryButtonClasses
+
+        leftImage,
+        leftImageClasses
     } = attributes;
 
     return (
         <>
             <InspectorControls>
                 <PanelBody title={__('Container', 'framos')} initialOpen={false}>
-                    <BaseControl label={__('Background Image', 'framos')}>
-                        {containerBgImage && containerBgImage?.url ? (
-                            <div className="framos-preview">
-                                <MediaUpload
-                                    onSelect={media => setAttributes({ containerBgImage: media })}
-                                    type="image"
-                                    value={containerBgImage?.id}
-                                    render={({ open }) => (
-                                        <button className="framos-edit-btn" title={__('Edit Image', 'framos')} onClick={open}>
-                                            <span className="dashicons dashicons-edit"></span>
-                                        </button>
-                                    )}
-                                />
-                                <img src={containerBgImage.url} alt={containerBgImage.alt || heading} />
-                            </div>
-                        ) : (
-                            <MediaUpload
-                                onSelect={media => setAttributes({ containerBgImage: media })}
-                                type="image"
-                                value={containerBgImage}
-                                render={({ open }) => (
-                                    <button onClick={open} className="components-button is-button is-default is-large framos-upload-btn">
-                                        {__('Select Image', 'framos')}
-                                    </button>
-                                )}
-                            />
-                        )}
-                    </BaseControl>
                     <FormTokenField
                         value={containerClasses}
                         onChange={v => setAttributes({ containerClasses: v.map(className => className.replace(/\s+/g, '-')) })}
@@ -65,20 +37,7 @@ const Inspector = ({ attributes, setAttributes }) => {
                         help={__('Add classes to the container', 'framos')}
                     />
                 </PanelBody>
-                <PanelBody title={__('Sub Heading', 'framos')} initialOpen={false}>
-                    <TextControl
-                        label={__('Text', 'framos')}
-                        value={subHeading}
-                        onChange={v => setAttributes({ subHeading: v })}
-                        placeholder={__('Add a subheading', 'framos')}
-                    />
-                    <FormTokenField
-                        value={subHeadingClasses}
-                        onChange={v => setAttributes({ subHeadingClasses: v.map(className => className.replace(/\s+/g, '-')) })}
-                        label={__('Classes', 'framos')}
-                        help={__('Add classes to the subheading.', 'framos')}
-                    />
-                </PanelBody>
+
                 <PanelBody title={__('Heading', 'framos')} initialOpen={false}>
                     <SelectControl
                         label={__('Select Tag', 'framos')}
@@ -99,6 +58,20 @@ const Inspector = ({ attributes, setAttributes }) => {
                         onChange={v => setAttributes({ headingClasses: v.map(className => className.replace(/\s+/g, '-')) })}
                         label={__('Classes', 'framos')}
                         help={__('Add classes to the heading tag.', 'framos')}
+                    />
+                </PanelBody>
+                <PanelBody title={__('Sub Title', 'framos')} initialOpen={false}>
+                    <TextControl
+                        label={__('Text', 'framos')}
+                        value={subTitle}
+                        onChange={v => setAttributes({ subTitle: v })}
+                        placeholder={__('Add a sub title', 'framos')}
+                    />
+                    <FormTokenField
+                        value={subTitleClasses}
+                        onChange={v => setAttributes({ subTitleClasses: v.map(className => className.replace(/\s+/g, '-')) })}
+                        label={__('Classes', 'framos')}
+                        help={__('Add classes to the sub title tag.', 'framos')}
                     />
                 </PanelBody>
                 <PanelBody title={__('Text', 'framos')} initialOpen={false}>
@@ -136,25 +109,35 @@ const Inspector = ({ attributes, setAttributes }) => {
                         help={__('Add classes to the primary button.', 'framos')}
                     />
                 </PanelBody>
-                <PanelBody title={__('Secondary Button', 'framos')} initialOpen={false}>
-                    <TextControl
-                        label={__('Text', 'framos')}
-                        value={secondaryButtonText}
-                        onChange={v => setAttributes({ secondaryButtonText: v })}
-                        placeholder={__('Secondary button text', 'framos')}
-                    />
-                    <LinkControl
-                        label={__('URL', 'framos')}
-                        value={secondaryButtonUrl}
-                        onChange={v => {
-                            setAttributes({ secondaryButtonUrl: v });
-                        }}
-                    />
+
+                <PanelBody title={__('Image', 'framos')} initialOpen={false}>
+                    {leftImage && leftImage?.url ? (
+                        <>
+                            <Button onClick={() => setAttributes({ leftImage: null })}>Remove</Button>
+                            <MediaUpload
+                                onSelect={media => setAttributes({ leftImage: media })}
+                                allowedTypes={['image']}
+                                value={leftImage?.id}
+                                render={({ open }) => <Button onClick={open}>Replace</Button>}
+                            />
+                            <img src={leftImage.url} />
+                        </>
+                    ) : (
+                        <MediaPlaceholder
+                            onSelect={el => {
+                                setAttributes({ leftImage: el });
+                            }}
+                            allowedTypes={['image']}
+                            multiple={false}
+                            value={leftImage?.id}
+                            labels={{ title: 'The Image' }}
+                        />
+                    )}
                     <FormTokenField
-                        value={secondaryButtonClasses}
-                        onChange={v => setAttributes({ secondaryButtonClasses: v.map(className => className.replace(/\s+/g, '-')) })}
+                        value={leftImageClasses}
+                        onChange={v => setAttributes({ leftImageClasses: v.map(className => className.replace(/\s+/g, '-')) })}
                         label={__('Classes', 'framos')}
-                        help={__('Add classes to the secondary button.', 'framos')}
+                        help={__('Add classes to the image.', 'framos')}
                     />
                 </PanelBody>
             </InspectorControls>

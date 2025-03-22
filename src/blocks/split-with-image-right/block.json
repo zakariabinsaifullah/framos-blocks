@@ -1,10 +1,10 @@
 {
     "apiVersion": 3,
-    "name": "framos/full-bg",
+    "name": "framos/split-with-image-right",
     "version": "1.0.0",
-    "title": "Full BG",
+    "title": "Split with Image Right",
     "category": "framos-blocks",
-    "description": "A full-width background block with a heading, text, and two buttons.",
+    "description": "A split with image right block",
     "supports": {
         "html": false,
         "anchor": true,
@@ -19,14 +19,37 @@
     "attributes": {
         "containerClasses": {
             "type": "array",
+            "default": ["bg-gray-900"]
+        },
+        "hiringText": {
+            "type": "string",
+            "default": "We're hiring!"
+        },
+        "hiringClasses": {
+            "type": "array",
             "default": []
         },
-        "containerBgImage": {
+        "optionText": {
+            "type": "string",
+            "default": "See open positions"
+        },
+        "optionUrl": {
+            "type": "object",
+            "default": {
+                "url": "#",
+                "isExternal": false
+            }
+        },
+        "optionIcon": {
             "type": "object"
+        },
+        "optionClasses": {
+            "type": "array",
+            "default": []
         },
         "heading": {
             "type": "string",
-            "default": "Data to enrich your online business"
+            "default": "Boost your productivity today."
         },
         "headingLevel": {
             "type": "string",
@@ -36,17 +59,9 @@
             "type": "array",
             "default": []
         },
-        "subHeading": {
-            "type": "string",
-            "default": "Announcing our next round of funding"
-        },
-        "subHeadingClasses": {
-            "type": "array",
-            "default": []
-        },
         "text": {
             "type": "string",
-            "default": "Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat."
+            "default": "Incididunt sint fugiat pariatur cupidatat consectetur sit cillum anim id veniam aliqua proident excepteur commodo do ea."
         },
         "textClasses": {
             "type": "array",
@@ -67,6 +82,7 @@
             "type": "array",
             "default": []
         },
+
         "secondaryButtonText": {
             "type": "string",
             "default": "Learn more"
@@ -79,6 +95,20 @@
             }
         },
         "secondaryButtonClasses": {
+            "type": "array",
+            "default": []
+        },
+        "secondaryBtnIcon": {
+            "type": "object"
+        },
+        "secondaryBtnIconClasses": {
+            "type": "array",
+            "default": []
+        },
+        "splitImage": {
+            "type": "object"
+        },
+        "splitImageClasses": {
             "type": "array",
             "default": []
         }

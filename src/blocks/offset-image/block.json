@@ -1,10 +1,10 @@
 {
     "apiVersion": 3,
-    "name": "framos/full-bg",
+    "name": "framos/offset-image",
     "version": "1.0.0",
-    "title": "Full BG",
+    "title": "Offset Image",
     "category": "framos-blocks",
-    "description": "A full-width background block with a heading, text, and two buttons.",
+    "description": "An offset Image block",
     "supports": {
         "html": false,
         "anchor": true,
@@ -19,14 +19,11 @@
     "attributes": {
         "containerClasses": {
             "type": "array",
-            "default": []
-        },
-        "containerBgImage": {
-            "type": "object"
+            "default": ["bg-gray-900"]
         },
         "heading": {
             "type": "string",
-            "default": "Data to enrich your online business"
+            "default": "We’re changing the way people connect."
         },
         "headingLevel": {
             "type": "string",
@@ -36,17 +33,9 @@
             "type": "array",
             "default": []
         },
-        "subHeading": {
-            "type": "string",
-            "default": "Announcing our next round of funding"
-        },
-        "subHeadingClasses": {
-            "type": "array",
-            "default": []
-        },
         "text": {
             "type": "string",
-            "default": "Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat."
+            "default": "Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua. Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo."
         },
         "textClasses": {
             "type": "array",
@@ -78,7 +67,22 @@
                 "isExternal": false
             }
         },
+
         "secondaryButtonClasses": {
+            "type": "array",
+            "default": []
+        },
+        "secondaryBtnIcon": {
+            "type": "object"
+        },
+        "secondaryBtnIconClasses": {
+            "type": "array",
+            "default": []
+        },
+        "offsetImage": {
+            "type": "object"
+        },
+        "offsetImageClasses": {
             "type": "array",
             "default": []
         }

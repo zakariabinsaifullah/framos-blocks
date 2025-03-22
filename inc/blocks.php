@@ -11,5 +11,11 @@
     'product-left',
     'grid-centerd',
     'grid-centerd-child'
-    
+    'offset-image',
+    'split-with-image-left',
+    'split-with-image-right',
+    'three-columns',
+    'column-child'
+    'accordion',
+    'content-image'
  ];

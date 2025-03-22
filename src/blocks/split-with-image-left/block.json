@@ -1,10 +1,10 @@
 {
     "apiVersion": 3,
-    "name": "framos/full-bg",
+    "name": "framos/split-with-image-left",
     "version": "1.0.0",
-    "title": "Full BG",
+    "title": "Split with Image Left",
     "category": "framos-blocks",
-    "description": "A full-width background block with a heading, text, and two buttons.",
+    "description": "A split with image left block",
     "supports": {
         "html": false,
         "anchor": true,
@@ -19,14 +19,12 @@
     "attributes": {
         "containerClasses": {
             "type": "array",
-            "default": []
+            "default": ["bg-gray-900"]
         },
-        "containerBgImage": {
-            "type": "object"
-        },
+
         "heading": {
             "type": "string",
-            "default": "Data to enrich your online business"
+            "default": "Award winning support."
         },
         "headingLevel": {
             "type": "string",
@@ -36,17 +34,17 @@
             "type": "array",
             "default": []
         },
-        "subHeading": {
+        "subTitle": {
             "type": "string",
-            "default": "Announcing our next round of funding"
+            "default": "We’re here to help"
         },
-        "subHeadingClasses": {
+        "subTitleClasses": {
             "type": "array",
             "default": []
         },
         "text": {
             "type": "string",
-            "default": "Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat."
+            "default": "Incididunt sint fugiat pariatur cupidatat consectetur sit cillum anim id veniam aliqua proident excepteur commodo do ea."
         },
         "textClasses": {
             "type": "array",
@@ -54,7 +52,7 @@
         },
         "primaryButtonText": {
             "type": "string",
-            "default": "Get started"
+            "default": "Visit the help center"
         },
         "primaryButtonUrl": {
             "type": "object",
@@ -67,18 +65,11 @@
             "type": "array",
             "default": []
         },
-        "secondaryButtonText": {
-            "type": "string",
-            "default": "Learn more"
+
+        "leftImage": {
+            "type": "object"
         },
-        "secondaryButtonUrl": {
-            "type": "object",
-            "default": {
-                "url": "#",
-                "isExternal": false
-            }
-        },
-        "secondaryButtonClasses": {
+        "leftImageClasses": {
             "type": "array",
             "default": []
         }
