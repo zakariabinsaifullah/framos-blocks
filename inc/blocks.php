@@ -11,5 +11,6 @@
     'split-with-image-right',
     'three-columns',
     'column-child'
-    
+    'accordion',
+    'content-image'
  ];
