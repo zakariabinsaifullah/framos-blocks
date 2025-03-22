@@ -10,6 +10,12 @@ import { HEADINGS } from '../../constants';
 const Inspector = ({ attributes, setAttributes }) => {
     const {
         containerClasses,
+        hiringText,
+        hiringClasses,
+        optionText,
+        optionUrl,
+        optionClasses,
+        optionIcon,
         heading,
         headingLevel,
         headingClasses,
@@ -22,8 +28,9 @@ const Inspector = ({ attributes, setAttributes }) => {
         secondaryButtonUrl,
         secondaryBtnIcon,
         secondaryButtonClasses,
-        offsetImage,
-        offsetImageClasses
+        secondaryBtnIconClasses,
+        splitImage,
+        splitImageClasses
     } = attributes;
 
     return (
@@ -36,6 +43,62 @@ const Inspector = ({ attributes, setAttributes }) => {
                         label={__('Classes', 'framos')}
                         help={__('Add classes to the container', 'framos')}
                     />
+                </PanelBody>
+                <PanelBody title={__('Hiring Option', 'framos')} initialOpen={false}>
+                    <TextControl
+                        label={__('Hiring Text', 'framos')}
+                        value={hiringText}
+                        onChange={v => setAttributes({ hiringText: v })}
+                        placeholder={__('Add text', 'framos')}
+                    />
+                    <FormTokenField
+                        value={hiringClasses}
+                        onChange={v => setAttributes({ hiringClasses: v.map(className => className.replace(/\s+/g, '-')) })}
+                        label={__('Hiring Classes', 'framos')}
+                        help={__('Add classes to the text.', 'framos')}
+                    />
+                    <TextControl
+                        label={__('Option Text', 'framos')}
+                        value={optionText}
+                        onChange={v => setAttributes({ optionText: v })}
+                        placeholder={__('Add text', 'framos')}
+                    />
+                    <LinkControl
+                        label={__('URL', 'framos')}
+                        value={optionUrl}
+                        onChange={v => {
+                            setAttributes({ optionUrl: v });
+                        }}
+                    />
+                    <FormTokenField
+                        value={optionClasses}
+                        onChange={v => setAttributes({ optionClasses: v.map(className => className.replace(/\s+/g, '-')) })}
+                        label={__('Option Classes', 'framos')}
+                        help={__('Add classes to the text.', 'framos')}
+                    />
+                    {optionIcon && optionIcon.url ? (
+                        <span aria-hidden="true">
+                            <Button onClick={() => setAttributes({ optionIcon: null })}>Remove</Button>
+                            <MediaUpload
+                                onSelect={media => setAttributes({ optionIcon: media })}
+                                allowedTypes={['image']}
+                                value={optionIcon?.id}
+                                render={({ open }) => <Button onClick={open}>Replace</Button>}
+                            />
+                            <img src={optionIcon.url} alt={optionIcon.alt} className="w-6" />
+                        </span>
+                    ) : (
+                        <MediaPlaceholder
+                            onSelect={media => {
+                                setAttributes({ optionIcon: media });
+                            }}
+                            allowedTypes={['image']}
+                            multiple={false}
+                            labels={{ title: 'Button Icon' }}
+                        >
+                            "Button Icon"
+                        </MediaPlaceholder>
+                    )}
                 </PanelBody>
                 <PanelBody title={__('Heading', 'framos')} initialOpen={false}>
                     <SelectControl
@@ -137,33 +200,39 @@ const Inspector = ({ attributes, setAttributes }) => {
                             "Button Icon"
                         </MediaPlaceholder>
                     )}
+                    <FormTokenField
+                        value={secondaryBtnIconClasses}
+                        onChange={v => setAttributes({ secondaryBtnIconClasses: v.map(className => className.replace(/\s+/g, '-')) })}
+                        label={__('Secondary Button Icon Classes', 'framos')}
+                        help={__('Add classes to the icon.', 'framos')}
+                    />
                 </PanelBody>
                 <PanelBody title={__('Image', 'framos')} initialOpen={false}>
-                    {offsetImage && offsetImage?.url ? (
+                    {splitImage && splitImage?.url ? (
                         <>
-                            <Button onClick={() => setAttributes({ offsetImage: null })}>Remove</Button>
+                            <Button onClick={() => setAttributes({ splitImage: null })}>Remove</Button>
                             <MediaUpload
-                                onSelect={media => setAttributes({ offsetImage: media })}
+                                onSelect={media => setAttributes({ splitImage: media })}
                                 allowedTypes={['image']}
-                                value={offsetImage?.id}
+                                value={splitImage?.id}
                                 render={({ open }) => <Button onClick={open}>Replace</Button>}
                             />
-                            <img src={offsetImage.url} />
+                            <img src={splitImage.url} />
                         </>
                     ) : (
                         <MediaPlaceholder
                             onSelect={el => {
-                                setAttributes({ offsetImage: el });
+                                setAttributes({ splitImage: el });
                             }}
                             allowedTypes={['image']}
                             multiple={false}
-                            value={offsetImage?.id}
+                            value={splitImage?.id}
                             labels={{ title: 'The Image' }}
                         />
                     )}
                     <FormTokenField
-                        value={offsetImageClasses}
-                        onChange={v => setAttributes({ offsetImageClasses: v.map(className => className.replace(/\s+/g, '-')) })}
+                        value={splitImageClasses}
+                        onChange={v => setAttributes({ splitImageClasses: v.map(className => className.replace(/\s+/g, '-')) })}
                         label={__('Classes', 'framos')}
                         help={__('Add classes to the image.', 'framos')}
                     />

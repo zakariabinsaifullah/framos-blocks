@@ -1,14 +1,17 @@
 /**
  * WordPress dependencies
  */
-import { RichText, useBlockProps } from '@wordpress/block-editor';
+import { BlockControls, RichText, useBlockProps, MediaUpload, MediaPlaceholder } from '@wordpress/block-editor';
+import { DropdownMenu, ToolbarGroup, Button } from '@wordpress/components';
 import { Fragment } from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
 import classnames from 'classnames';
+import Inspector from './inspector';
 
 /**
- * Save function
+ * Edit function
  */
-export default function Save({ attributes }) {
+export default function Edit({ attributes, setAttributes, clientId }) {
     const {
         containerClasses,
         heading,
@@ -23,15 +26,44 @@ export default function Save({ attributes }) {
         secondaryButtonUrl,
         secondaryButtonClasses,
         secondaryBtnIcon,
+        secondaryBtnIconClasses,
         offsetImage,
         offsetImageClasses
     } = attributes;
 
     // Block Props
-    const blockProps = useBlockProps.save();
+    const blockProps = useBlockProps();
 
     return (
         <Fragment>
+            <Inspector attributes={attributes} setAttributes={setAttributes} />
+            <BlockControls>
+                <ToolbarGroup>
+                    <DropdownMenu
+                        icon="heading"
+                        label={__('Tag', 'framos')}
+                        controls={['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p'].map(level => ({
+                            title: __(level === 'p' ? 'Paragraph' : `Heading ${level.slice(1)}`, 'framos'),
+                            isActive: headingLevel === level,
+                            onClick: () => setAttributes({ headingLevel: level })
+                        }))}
+                    />
+                </ToolbarGroup>
+
+                <ToolbarGroup>
+                    <MediaUpload
+                        onSelect={media => {
+                            setAttributes({
+                                offsetImage: media
+                            });
+                        }}
+                        allowedTypes={['image']}
+                        multiple={false}
+                        value={offsetImage?.id}
+                        render={({ open }) => <Button icon="insert" onClick={open} />}
+                    />
+                </ToolbarGroup>
+            </BlockControls>
             <div {...blockProps}>
                 <div className="bg-white">
                     <div
@@ -45,7 +77,7 @@ export default function Save({ attributes }) {
                         />
                         <div className="mx-auto max-w-7xl px-6 py-32 sm:py-40 lg:px-8">
                             <div className="mx-auto max-w-2xl lg:mx-0 lg:grid lg:max-w-none lg:grid-cols-2 lg:gap-x-16 lg:gap-y-8 xl:grid-cols-1 xl:grid-rows-1 xl:gap-x-8">
-                                <RichText.Content
+                                <RichText
                                     tagName={headingLevel}
                                     className={classnames(
                                         'max-w-2xl text-balance text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl lg:col-span-2 xl:col-auto',
@@ -54,23 +86,22 @@ export default function Save({ attributes }) {
                                         }
                                     )}
                                     value={heading}
+                                    onChange={v => setAttributes({ heading: v })}
+                                    placeholder={__('Add a heading', 'framos')}
                                 />
-
                                 <div className="mt-6 max-w-xl lg:mt-0 xl:col-end-1 xl:row-start-1">
-                                    <RichText.Content
+                                    <RichText
                                         tagName="p"
                                         className={classnames('text-pretty text-lg font-medium text-gray-500 sm:text-xl/8', {
                                             [textClasses.join(' ')]: textClasses.length > 0 && textClasses
                                         })}
                                         value={text}
+                                        onChange={v => setAttributes({ text: v })}
+                                        placeholder={__('Add text', 'framos')}
                                     />
                                     <div className="mt-10 flex items-center gap-x-6">
                                         <a
-                                            href={primaryButtonUrl ? primaryButtonUrl?.url : '#'}
-                                            {...(primaryButtonUrl?.opensInNewTab && {
-                                                target: '_blank',
-                                                rel: 'noopener noreferrer'
-                                            })}
+                                            href="#"
                                             className={classnames(
                                                 'rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600',
                                                 {
@@ -79,24 +110,37 @@ export default function Save({ attributes }) {
                                                 }
                                             )}
                                         >
-                                            <RichText.Content tagName="span" value={primaryButtonText} />
+                                            <RichText
+                                                tagName="span"
+                                                value={primaryButtonText}
+                                                onChange={v => setAttributes({ primaryButtonText: v })}
+                                                placeholder={__('button text', 'framos')}
+                                            />
                                         </a>
 
                                         <a
-                                            href={secondaryButtonUrl ? secondaryButtonUrl?.url : '#'}
-                                            {...(secondaryButtonUrl?.opensInNewTab && {
-                                                target: '_blank',
-                                                rel: 'noopener noreferrer'
-                                            })}
+                                            href="#"
                                             className={classnames('text-sm/6 font-semibold text-gray-900', {
                                                 [secondaryButtonClasses.join(' ')]:
                                                     secondaryButtonClasses.length > 0 && secondaryButtonClasses
                                             })}
                                         >
-                                            <RichText.Content tagName="span" value={secondaryButtonText} />
+                                            <RichText
+                                                tagName="span"
+                                                value={secondaryButtonText}
+                                                onChange={v => setAttributes({ secondaryButtonText: v })}
+                                                placeholder={__('button text', 'framos')}
+                                            />
                                             {secondaryBtnIcon && secondaryBtnIcon.url && (
                                                 <span aria-hidden="true">
-                                                    <img src={secondaryBtnIcon.url} alt={secondaryBtnIcon.alt} className="w-6" />
+                                                    <img
+                                                        src={secondaryBtnIcon.url}
+                                                        alt={secondaryBtnIcon.alt}
+                                                        className={classnames('w-6', {
+                                                            [secondaryBtnIconClasses.join(' ')]:
+                                                                secondaryBtnIconClasses.length > 0 && secondaryBtnIconClasses
+                                                        })}
+                                                    />
                                                 </span>
                                             )}
                                         </a>
@@ -114,10 +158,15 @@ export default function Save({ attributes }) {
                                         )}
                                     />
                                 ) : (
-                                    <img
-                                        src="https://placehold.co/600x400"
-                                        alt="image"
-                                        className="mt-10 aspect-[6/5] w-full max-w-lg rounded-2xl object-cover sm:mt-16 lg:mt-0 lg:max-w-none xl:row-span-2 xl:row-end-2 xl:mt-36"
+                                    <MediaPlaceholder
+                                        onSelect={el => {
+                                            setAttributes({ offsetImage: el });
+                                        }}
+                                        className="sm:mt-16 lg:mt-0 lg:max-w-none xl:row-span-2 xl:row-end-2 xl:mt-36"
+                                        allowedTypes={['image']}
+                                        multiple={false}
+                                        value={offsetImage?.id}
+                                        labels={{ title: 'The Image' }}
                                     />
                                 )}
                             </div>

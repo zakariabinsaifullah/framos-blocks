@@ -1,10 +1,10 @@
 {
     "apiVersion": 3,
-    "name": "framos/offset",
+    "name": "framos/offset-image",
     "version": "1.0.0",
-    "title": "Offset",
+    "title": "Offset Image",
     "category": "framos-blocks",
-    "description": "An offset block",
+    "description": "An offset Image block",
     "supports": {
         "html": false,
         "anchor": true,
@@ -67,10 +67,15 @@
                 "isExternal": false
             }
         },
+
+        "secondaryButtonClasses": {
+            "type": "array",
+            "default": []
+        },
         "secondaryBtnIcon": {
             "type": "object"
         },
-        "secondaryButtonClasses": {
+        "secondaryBtnIconClasses": {
             "type": "array",
             "default": []
         },

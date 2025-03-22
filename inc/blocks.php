@@ -6,5 +6,10 @@
  return [
     'cta',
     'full-bg',
-    'offset',
+    'offset-image',
+    'split-with-image-left',
+    'split-with-image-right',
+    'three-columns',
+    'column-child'
+    
  ];

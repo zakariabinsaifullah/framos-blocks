@@ -1,0 +1,118 @@
+{
+    "apiVersion": 3,
+    "name": "framos/split-with-image-right",
+    "version": "1.0.0",
+    "title": "Split with Image Right",
+    "category": "framos-blocks",
+    "description": "A split with image right block",
+    "supports": {
+        "html": false,
+        "anchor": true,
+        "align": ["wide", "full"]
+    },
+    "example": {
+        "attributes": {
+            "preview": true
+        },
+        "viewportWidth": 432
+    },
+    "attributes": {
+        "containerClasses": {
+            "type": "array",
+            "default": ["bg-gray-900"]
+        },
+        "hiringText": {
+            "type": "string",
+            "default": "We're hiring!"
+        },
+        "hiringClasses": {
+            "type": "array",
+            "default": []
+        },
+        "optionText": {
+            "type": "string",
+            "default": "See open positions"
+        },
+        "optionUrl": {
+            "type": "object",
+            "default": {
+                "url": "#",
+                "isExternal": false
+            }
+        },
+        "optionIcon": {
+            "type": "object"
+        },
+        "optionClasses": {
+            "type": "array",
+            "default": []
+        },
+        "heading": {
+            "type": "string",
+            "default": "Boost your productivity today."
+        },
+        "headingLevel": {
+            "type": "string",
+            "default": "h2"
+        },
+        "headingClasses": {
+            "type": "array",
+            "default": []
+        },
+        "text": {
+            "type": "string",
+            "default": "Incididunt sint fugiat pariatur cupidatat consectetur sit cillum anim id veniam aliqua proident excepteur commodo do ea."
+        },
+        "textClasses": {
+            "type": "array",
+            "default": []
+        },
+        "primaryButtonText": {
+            "type": "string",
+            "default": "Get started"
+        },
+        "primaryButtonUrl": {
+            "type": "object",
+            "default": {
+                "url": "#",
+                "isExternal": false
+            }
+        },
+        "primaryButtonClasses": {
+            "type": "array",
+            "default": []
+        },
+
+        "secondaryButtonText": {
+            "type": "string",
+            "default": "Learn more"
+        },
+        "secondaryButtonUrl": {
+            "type": "object",
+            "default": {
+                "url": "#",
+                "isExternal": false
+            }
+        },
+        "secondaryButtonClasses": {
+            "type": "array",
+            "default": []
+        },
+        "secondaryBtnIcon": {
+            "type": "object"
+        },
+        "secondaryBtnIconClasses": {
+            "type": "array",
+            "default": []
+        },
+        "splitImage": {
+            "type": "object"
+        },
+        "splitImageClasses": {
+            "type": "array",
+            "default": []
+        }
+    },
+    "textdomain": "framos-custom-blocks",
+    "editorScript": "file:./index.js"
+}
