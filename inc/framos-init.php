@@ -23,6 +23,8 @@ if( ! class_exists( 'Framos_Init' ) ) {
             add_action( 'init', [ $this, 'register_blocks' ] );
             // block editor assets 
             add_action( 'enqueue_block_editor_assets', [ $this, 'block_editor_assets' ] );
+            // block assets 
+            add_action( 'enqueue_block_assets', [ $this, 'block_assets' ] );
         }
 
         /**
@@ -76,6 +78,23 @@ if( ! class_exists( 'Framos_Init' ) ) {
                 FRAMOS_VERSION,
                 'all'
             );
+        }
+
+        /**
+         * Block assets
+         */
+        public function block_assets() {
+            // // styles
+            // wp_enqueue_style(
+            //     'framos-blocks-css',
+            //     FRAMOS_URL . 'assets/css/blocks.css',
+            //     [],
+            //     FRAMOS_VERSION,
+            //     'all'
+            // );
+
+            wp_register_style( 'framos-swiper', FRAMOS_URL . 'assets/css/swiper-bundle.min.css', [], FRAMOS_VERSION, 'all' );
+            wp_register_script( 'framos-swiper', FRAMOS_URL . 'assets/js/swiper-bundle.min.js', [], FRAMOS_VERSION, true );
         }
 
         /**

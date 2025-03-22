@@ -1,0 +1,25 @@
+.verticle-animation .swiper-slide {
+    display: flex;
+    justify-content: flex-end;
+    width: 200px;
+    height: 310px;
+}
+.swiper-container {
+    width: 100%;
+    height: 310px;
+}
+.swiper-container1 {
+    width: 100%;
+    height: 310px;
+}
+.swiper-wrapper {
+    -webkit-transition-timing-function: linear !important;
+    transition-timing-function: linear !important;
+    position: relative;
+}
+.inner {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+
+    background: rgba(255, 255, 255, 0.5);
+}

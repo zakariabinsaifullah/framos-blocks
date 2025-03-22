@@ -1,0 +1,85 @@
+{
+    "apiVersion": 3,
+    "name": "framos/feature-card",
+    "version": "1.0.0",
+    "title": "Feature Card",
+    "category": "framos-blocks",
+    "description": "Horizontal feature card with image slider",
+    "supports": {
+        "html": false,
+        "anchor": true,
+        "align": ["wide", "full"]
+    },
+    "example": {
+        "attributes": {
+            "preview": true
+        },
+        "viewportWidth": 432
+    },
+    "attributes": {
+        "sliderStatus": {
+            "type": "boolean",
+            "default": false
+        },
+        "containerClasses": {
+            "type": "array",
+            "default": []
+        },
+        "heading": {
+            "type": "string",
+            "default": "Our dedication to our customers"
+        },
+        "headingLevel": {
+            "type": "string",
+            "default": "h2"
+        },
+        "headingClasses": {
+            "type": "array",
+            "default": []
+        },
+        "text": {
+            "type": "string",
+            "default": "Experience effortless communication with our secure and intuitive chat application. Stay connected with friends, family, and colleagues wherever you are."
+        },
+        "textClasses": {
+            "type": "array",
+            "default": []
+        },
+        "sliderTitle": {
+            "type": "string",
+            "default": "Grow faster with pro's help"
+        },
+        "sliderTitleTag": {
+            "type": "string",
+            "default": "h3"
+        },
+        "sliderTitleClasses": {
+            "type": "array",
+            "default": []
+        },
+        "sliderText": {
+            "type": "string",
+            "default": "Experience top-notch features with our services"
+        },
+        "sliderTextClasses": {
+            "type": "array",
+            "default": []
+        },
+        "sliderNavWrapperClasses": {
+            "type": "array",
+            "default": []
+        },
+        "prevClasses": {
+            "type": "array",
+            "default": []
+        },
+        "nextClasses": {
+            "type": "array",
+            "default": []
+        }
+    },
+    "textdomain": "framos-custom-blocks",
+    "editorScript": ["file:./index.js", "framos-swiper"],
+    "style": ["file:./style-index.css", "framos-swiper"],
+    "viewScript": ["file:./view.js", "framos-swiper"]
+}

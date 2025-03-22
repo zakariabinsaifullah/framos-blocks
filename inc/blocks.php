@@ -7,5 +7,8 @@
     'cta',
     'full-bg',
     'accordion',
-    'content-image'
+    'content-image',
+    'vertical-carousel',
+    'slide',
+    'feature-card',
  ];

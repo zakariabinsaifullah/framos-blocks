@@ -1,0 +1,52 @@
+{
+    "apiVersion": 3,
+    "name": "framos/slide",
+    "version": "1.0.0",
+    "title": "Single Slide",
+    "category": "framos-blocks",
+    "description": "Single slide with image and text",
+    "supports": {
+        "html": false,
+        "anchor": true,
+        "align": ["wide", "full"]
+    },
+    "example": {
+        "attributes": {
+            "preview": true
+        },
+        "viewportWidth": 432
+    },
+    "parent": ["framos/feature-card"],
+    "attributes": {
+        "containerClasses": {
+            "type": "array",
+            "default": []
+        },
+        "heading": {
+            "type": "string",
+            "default": "Sales and Marketing"
+        },
+        "headingLevel": {
+            "type": "string",
+            "default": "h3"
+        },
+        "headingClasses": {
+            "type": "array",
+            "default": []
+        },
+        "text": {
+            "type": "string",
+            "default": "Incididunt sint fugiat pariatur cupidatat consectetur sit cillum anim id veniam aliqua proident excepteur commodo do ea."
+        },
+        "textClasses": {
+            "type": "array",
+            "default": []
+        },
+        "image": {
+            "type": "object"
+        }
+    },
+    "textdomain": "framos-custom-blocks",
+    "editorScript": "file:./index.js",
+    "viewScript": "file:./view.js"
+}
