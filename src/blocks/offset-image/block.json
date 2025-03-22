@@ -1,0 +1,92 @@
+{
+    "apiVersion": 3,
+    "name": "framos/offset-image",
+    "version": "1.0.0",
+    "title": "Offset Image",
+    "category": "framos-blocks",
+    "description": "An offset Image block",
+    "supports": {
+        "html": false,
+        "anchor": true,
+        "align": ["wide", "full"]
+    },
+    "example": {
+        "attributes": {
+            "preview": true
+        },
+        "viewportWidth": 432
+    },
+    "attributes": {
+        "containerClasses": {
+            "type": "array",
+            "default": ["bg-gray-900"]
+        },
+        "heading": {
+            "type": "string",
+            "default": "We’re changing the way people connect."
+        },
+        "headingLevel": {
+            "type": "string",
+            "default": "h2"
+        },
+        "headingClasses": {
+            "type": "array",
+            "default": []
+        },
+        "text": {
+            "type": "string",
+            "default": "Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua. Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo."
+        },
+        "textClasses": {
+            "type": "array",
+            "default": []
+        },
+        "primaryButtonText": {
+            "type": "string",
+            "default": "Get started"
+        },
+        "primaryButtonUrl": {
+            "type": "object",
+            "default": {
+                "url": "#",
+                "isExternal": false
+            }
+        },
+        "primaryButtonClasses": {
+            "type": "array",
+            "default": []
+        },
+        "secondaryButtonText": {
+            "type": "string",
+            "default": "Learn more"
+        },
+        "secondaryButtonUrl": {
+            "type": "object",
+            "default": {
+                "url": "#",
+                "isExternal": false
+            }
+        },
+
+        "secondaryButtonClasses": {
+            "type": "array",
+            "default": []
+        },
+        "secondaryBtnIcon": {
+            "type": "object"
+        },
+        "secondaryBtnIconClasses": {
+            "type": "array",
+            "default": []
+        },
+        "offsetImage": {
+            "type": "object"
+        },
+        "offsetImageClasses": {
+            "type": "array",
+            "default": []
+        }
+    },
+    "textdomain": "framos-custom-blocks",
+    "editorScript": "file:./index.js"
+}

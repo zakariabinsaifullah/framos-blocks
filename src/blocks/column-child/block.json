@@ -1,0 +1,71 @@
+{
+    "apiVersion": 3,
+    "name": "framos/column-child",
+    "version": "1.0.0",
+    "title": "Three columns",
+    "category": "framos-blocks",
+    "description": "a three columns  block",
+    "supports": {
+        "html": false,
+        "anchor": true,
+        "align": ["wide", "full"]
+    },
+    "example": {
+        "attributes": {
+            "preview": true
+        },
+        "viewportWidth": 432
+    },
+    "parent": ["framos/three-columns"],
+    "attributes": {
+        "title": {
+            "type": "string",
+            "default": "Deploy faster"
+        },
+        "titleClasses": {
+            "type": "array",
+            "default": []
+        },
+
+        "text": {
+            "type": "string",
+            "default": "Incididunt sint fugiat pariatur cupidatat consectetur sit cillum anim id veniam aliqua proident excepteur commodo do ea."
+        },
+        "textClasses": {
+            "type": "array",
+            "default": []
+        },
+        "ButtonText": {
+            "type": "string",
+            "default": "Get started"
+        },
+        "ButtonUrl": {
+            "type": "object",
+            "default": {
+                "url": "#",
+                "isExternal": false
+            }
+        },
+        "ButtonClasses": {
+            "type": "array",
+            "default": []
+        },
+
+        "BtnIcon": { "type": "object" },
+
+        "BtnIconClasses": {
+            "type": "array",
+            "default": []
+        },
+
+        "image": {
+            "type": "string"
+        },
+        "imageClasses": {
+            "type": "array",
+            "default": []
+        }
+    },
+    "textdomain": "framos-custom-blocks",
+    "editorScript": "file:./index.js"
+}
