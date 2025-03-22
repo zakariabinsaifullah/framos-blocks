@@ -9,7 +9,7 @@ import Save from './save';
  */
 registerBlockType(metadata, {
     icon: {
-        src: 'menu'
+        src: 'minus'
     },
     edit: Edit,
     save: Save

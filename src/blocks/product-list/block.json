@@ -1,0 +1,40 @@
+{
+    "apiVersion": 3,
+    "name": "framos/product-list",
+    "version": "1.0.0",
+    "title": "Product-list",
+    "category": "framos-blocks",
+    "description": "A full-width background block with a heading, text, and two buttons.",
+    "parent": ["framos/product"],
+    "supports": {
+        "html": false,
+        "anchor": true,
+        "align": ["wide", "full"]
+    },
+    "example": {
+        "attributes": {
+            "preview": true
+        },
+        "viewportWidth": 432
+    },
+
+    "attributes": {
+        "listText": {
+            "type": "string",
+            "default": "Push to deploy. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione."
+        },
+        "listClass": {
+            "type": "string",
+            "default": []
+        },
+        "icon": {
+            "type": "object"
+        },
+        "iconClass": {
+            "type": "string",
+            "default": []
+        }
+    },
+    "textdomain": "framos-custom-blocks",
+    "editorScript": "file:./index.js"
+}

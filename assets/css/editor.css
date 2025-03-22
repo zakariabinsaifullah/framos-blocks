@@ -10,6 +10,7 @@
     width: 100%;
     display: block;
     border: 1px solid #ccc;
+    margin-bottom: 16px;
 }
 
 .framos-preview {
@@ -19,6 +20,7 @@
     overflow: hidden;
     border: 1px solid #ccc;
     border-radius: 3px;
+    margin-bottom: 16px;
 }
 
 .framos-preview img {

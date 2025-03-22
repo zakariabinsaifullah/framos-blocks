@@ -12,7 +12,7 @@ import Save from './save';
  */
 registerBlockType(metadata, {
     icon: {
-        src: 'align-left'
+        src: 'block-default'
     },
     edit: Edit,
     save: Save

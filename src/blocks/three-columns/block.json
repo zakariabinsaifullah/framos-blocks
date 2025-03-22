@@ -1,10 +1,10 @@
 {
     "apiVersion": 3,
-    "name": "framos/slide",
+    "name": "framos/three-columns",
     "version": "1.0.0",
-    "title": "Single Slide",
+    "title": "Three columns",
     "category": "framos-blocks",
-    "description": "Single slide with image and text",
+    "description": "a three columns  block",
     "supports": {
         "html": false,
         "anchor": true,
@@ -16,21 +16,29 @@
         },
         "viewportWidth": 432
     },
-    "parent": ["framos/feature-card"],
     "attributes": {
         "containerClasses": {
             "type": "array",
-            "default": []
+            "default": ["bg-sky-50"]
         },
+
         "heading": {
             "type": "string",
-            "default": "Sales and Marketing"
+            "default": "Deploy faster"
         },
         "headingLevel": {
             "type": "string",
-            "default": "h3"
+            "default": "h2"
         },
         "headingClasses": {
+            "type": "array",
+            "default": []
+        },
+        "subTitle": {
+            "type": "string",
+            "default": "Everything you need to deploy your ap"
+        },
+        "subTitleClasses": {
             "type": "array",
             "default": []
         },
@@ -41,12 +49,9 @@
         "textClasses": {
             "type": "array",
             "default": []
-        },
-        "image": {
-            "type": "object"
         }
+        
     },
     "textdomain": "framos-custom-blocks",
-    "editorScript": "file:./index.js",
-    "viewScript": "file:./view.js"
+    "editorScript": "file:./index.js"
 }

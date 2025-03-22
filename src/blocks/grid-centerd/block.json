@@ -1,0 +1,55 @@
+{
+    "apiVersion": 3,
+    "name": "framos/grid-centerd",
+    "version": "1.0.0",
+    "title": "Grid Centerd ",
+    "category": "framos-blocks",
+    "description": "Grid Centerd block",
+    "supports": {
+        "html": false,
+        "anchor": true,
+        "align": ["wide", "full"]
+    },
+    "example": {
+        "attributes": {
+            "preview": true
+        },
+        "viewportWidth": 432
+    },
+    "attributes": {
+        "containerClasses": {
+            "type": "array",
+            "default": ["bg-gray-900"]
+        },
+        "heading": {
+            "type": "string",
+            "default": "Everything you need to deploy your app"
+        },
+        "headingLevel": {
+            "type": "string",
+            "default": "h2"
+        },
+        "headingClasses": {
+            "type": "array",
+            "default": []
+        },
+        "subtitle": {
+            "type": "string",
+            "default": "Deploy faster"
+        },
+        "subtitleClass": {
+            "type": "string",
+            "default": []
+        },
+        "desc": {
+            "type": "string",
+            "default": "Quis tellus eget adipiscing convallis sit sit eget aliquet quis. Suspendisse eget egestas a elementum pulvinar et feugiat blandit at. In mi viverra elit nunc."
+        },
+        "descClass": {
+            "type": "string",
+            "default": []
+        }
+    },
+    "textdomain": "framos-custom-blocks",
+    "editorScript": "file:./index.js"
+}

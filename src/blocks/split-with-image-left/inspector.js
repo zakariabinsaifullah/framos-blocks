@@ -1,25 +1,29 @@
 /**
  * WordPress dependencies
  */
-import { InspectorControls, MediaUpload } from '@wordpress/block-editor';
+import { InspectorControls, __experimentalLinkControl as LinkControl, MediaUpload } from '@wordpress/block-editor';
 
-import { FormTokenField, PanelBody, SelectControl, TextControl, TextareaControl, ToggleControl } from '@wordpress/components';
+import { FormTokenField, PanelBody, SelectControl, TextControl, TextareaControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 import { HEADINGS } from '../../constants';
 
 const Inspector = ({ attributes, setAttributes }) => {
     const {
         containerClasses,
+
         heading,
         headingLevel,
         headingClasses,
+        subTitle,
+        subTitleClasses,
         text,
         textClasses,
-        image,
-        layoutClasses,
-        contentSideClasses,
-        imageSideClasses,
-        changeOrder
+        primaryButtonText,
+        primaryButtonUrl,
+        primaryButtonClasses,
+
+        leftImage,
+        leftImageClasses
     } = attributes;
 
     return (
@@ -33,32 +37,7 @@ const Inspector = ({ attributes, setAttributes }) => {
                         help={__('Add classes to the container', 'framos')}
                     />
                 </PanelBody>
-                <PanelBody title={__('Layout', 'framos')} initialOpen={false}>
-                    <ToggleControl
-                        label={__('Change Order', 'framos')}
-                        checked={changeOrder}
-                        onChange={v => setAttributes({ changeOrder: v })}
-                        help={__('Change the order of the content and image sides.', 'framos')}
-                    />
-                    <FormTokenField
-                        value={layoutClasses}
-                        onChange={v => setAttributes({ layoutClasses: v.map(className => className.replace(/\s+/g, '-')) })}
-                        label={__('Flex Classes', 'framos')}
-                        help={__('Add classes to the flex layout', 'framos')}
-                    />
-                    <FormTokenField
-                        value={contentSideClasses}
-                        onChange={v => setAttributes({ contentSideClasses: v.map(className => className.replace(/\s+/g, '-')) })}
-                        label={__('Content Side Classes', 'framos')}
-                        help={__('Add classes to the content side', 'framos')}
-                    />
-                    <FormTokenField
-                        value={imageSideClasses}
-                        onChange={v => setAttributes({ imageSideClasses: v.map(className => className.replace(/\s+/g, '-')) })}
-                        label={__('Image Side Classes', 'framos')}
-                        help={__('Add classes to the image side', 'framos')}
-                    />
-                </PanelBody>
+
                 <PanelBody title={__('Heading', 'framos')} initialOpen={false}>
                     <SelectControl
                         label={__('Select Tag', 'framos')}
@@ -81,6 +60,20 @@ const Inspector = ({ attributes, setAttributes }) => {
                         help={__('Add classes to the heading tag.', 'framos')}
                     />
                 </PanelBody>
+                <PanelBody title={__('Sub Title', 'framos')} initialOpen={false}>
+                    <TextControl
+                        label={__('Text', 'framos')}
+                        value={subTitle}
+                        onChange={v => setAttributes({ subTitle: v })}
+                        placeholder={__('Add a sub title', 'framos')}
+                    />
+                    <FormTokenField
+                        value={subTitleClasses}
+                        onChange={v => setAttributes({ subTitleClasses: v.map(className => className.replace(/\s+/g, '-')) })}
+                        label={__('Classes', 'framos')}
+                        help={__('Add classes to the sub title tag.', 'framos')}
+                    />
+                </PanelBody>
                 <PanelBody title={__('Text', 'framos')} initialOpen={false}>
                     <TextareaControl
                         label={__('Text', 'framos')}
@@ -95,26 +88,48 @@ const Inspector = ({ attributes, setAttributes }) => {
                         help={__('Add classes to the text.', 'framos')}
                     />
                 </PanelBody>
+                <PanelBody title={__('Primary Button', 'framos')} initialOpen={false}>
+                    <TextControl
+                        label={__('Text', 'framos')}
+                        value={primaryButtonText}
+                        onChange={v => setAttributes({ primaryButtonText: v })}
+                        placeholder={__('Primary button text', 'framos')}
+                    />
+                    <LinkControl
+                        label={__('URL', 'framos')}
+                        value={primaryButtonUrl}
+                        onChange={v => {
+                            setAttributes({ primaryButtonUrl: v });
+                        }}
+                    />
+                    <FormTokenField
+                        value={primaryButtonClasses}
+                        onChange={v => setAttributes({ primaryButtonClasses: v.map(className => className.replace(/\s+/g, '-')) })}
+                        label={__('Classes', 'framos')}
+                        help={__('Add classes to the primary button.', 'framos')}
+                    />
+                </PanelBody>
+
                 <PanelBody title={__('Image', 'framos')} initialOpen={false}>
-                    {image && image?.url ? (
+                    {leftImage && leftImage?.url ? (
                         <div className="framos-preview">
                             <MediaUpload
-                                onSelect={media => setAttributes({ image: media })}
+                                onSelect={media => setAttributes({ leftImage: media })}
                                 type="image"
-                                value={image?.id}
+                                value={leftImage?.id}
                                 render={({ open }) => (
                                     <button className="framos-edit-btn" title={__('Edit Image', 'framos')} onClick={open}>
                                         <span className="dashicons dashicons-edit"></span>
                                     </button>
                                 )}
                             />
-                            <img src={image.url} alt={image.alt || heading} />
+                            <img src={leftImage.url} alt={leftImage.alt} />
                         </div>
                     ) : (
                         <MediaUpload
-                            onSelect={media => setAttributes({ image: media })}
+                            onSelect={media => setAttributes({ leftImage: media })}
                             type="image"
-                            value={image}
+                            value={leftImage}
                             render={({ open }) => (
                                 <button onClick={open} className="components-button is-button is-default is-large framos-upload-btn">
                                     {__('Select Image', 'framos')}
@@ -122,6 +137,12 @@ const Inspector = ({ attributes, setAttributes }) => {
                             )}
                         />
                     )}
+                    <FormTokenField
+                        value={leftImageClasses}
+                        onChange={v => setAttributes({ leftImageClasses: v.map(className => className.replace(/\s+/g, '-')) })}
+                        label={__('Classes', 'framos')}
+                        help={__('Add classes to the image.', 'framos')}
+                    />
                 </PanelBody>
             </InspectorControls>
         </>
