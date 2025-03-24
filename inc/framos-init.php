@@ -59,9 +59,9 @@ if( ! class_exists( 'Framos_Init' ) ) {
             // check if blocks list is not empty
             if ( ! empty( $blocks ) ) {
                 // register blocks
-               foreach( $blocks as $block ) {
-    register_block_type( 'framos/' . $block );
-}
+                foreach( $blocks as $block ) {
+                    register_block_type( FRAMOS_PATH . 'build/blocks/' . $block );
+                }
 
             }
 
