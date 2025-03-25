@@ -106,7 +106,7 @@ const Inspector = ({ attributes, setAttributes }) => {
                                     </button>
                                 )}
                             />
-                            <img src={image.url} alt={image.alt || heading} />
+                            <img src={image.url} alt={image.alt} />
                         </div>
                     ) : (
                         <MediaUpload

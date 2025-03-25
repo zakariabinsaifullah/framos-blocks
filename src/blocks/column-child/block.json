@@ -2,9 +2,9 @@
     "apiVersion": 3,
     "name": "framos/column-child",
     "version": "1.0.0",
-    "title": "Three columns",
+    "title": "Single Column",
     "category": "framos-blocks",
-    "description": "a three columns  block",
+    "description": "Single column block",
     "supports": {
         "html": false,
         "anchor": true,
