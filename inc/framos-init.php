@@ -55,15 +55,15 @@ if( ! class_exists( 'Framos_Init' ) ) {
         public function register_blocks() {
             // get blocks list
             $blocks = require_once FRAMOS_PATH . 'inc/blocks.php';
-
             // check if blocks list is not empty
             if ( ! empty( $blocks ) ) {
-                // register blocks
-                foreach( $blocks as $block ) {
-                    register_block_type( FRAMOS_PATH . 'build/blocks/' . $block );
+            foreach( $blocks as $block ) {
+                $block_path = FRAMOS_PATH . 'build/blocks/' . $block;
+                if ( file_exists( $block_path ) ) {
+                    register_block_type( $block_path );
                 }
             }
-
+            }
         }
 
         /**
@@ -84,15 +84,6 @@ if( ! class_exists( 'Framos_Init' ) ) {
          * Block assets
          */
         public function block_assets() {
-            // // styles
-            // wp_enqueue_style(
-            //     'framos-blocks-css',
-            //     FRAMOS_URL . 'assets/css/blocks.css',
-            //     [],
-            //     FRAMOS_VERSION,
-            //     'all'
-            // );
-
             wp_register_style( 'framos-swiper', FRAMOS_URL . 'assets/css/swiper-bundle.min.css', [], FRAMOS_VERSION, 'all' );
             wp_register_script( 'framos-swiper', FRAMOS_URL . 'assets/js/swiper-bundle.min.js', [], FRAMOS_VERSION, true );
         }
