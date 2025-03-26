@@ -117,6 +117,7 @@ export default function Edit({ attributes, setAttributes, clientId }) {
                                                 ['framos/accordion', { heading: 'Accordion Heading #1' }],
                                                 ['framos/accordion', { heading: 'Accordion Heading #2' }]
                                             ]}
+                                            renderAppender={() => null}
                                         />
                                     </dl>
                                     <button

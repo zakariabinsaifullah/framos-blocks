@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 centeredSlides: true,
                 speed: 9000,
                 autoplay: {
-                    delay: 1
+                    delay: 1000
                 },
                 slidesPerView: 'auto',
                 allowTouchMove: false,
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 centeredSlides: true,
                 speed: 9000,
                 autoplay: {
-                    delay: 2
+                    delay: 2000
                 },
                 slidesPerView: 'auto',
                 allowTouchMove: false,
