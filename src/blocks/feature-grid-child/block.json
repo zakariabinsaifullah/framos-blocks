@@ -1,0 +1,47 @@
+{
+    "apiVersion": 3,
+    "name": "framos/feature-grid-child",
+    "version": "1.0.0",
+    "title": "Feature Grid Child",
+    "category": "framos-blocks",
+    "description": "A block for a feature grid child.",
+    "supports": {
+        "html": false,
+        "anchor": true,
+        "align": ["wide", "full"]
+    },
+
+    "example": {
+        "attributes": {
+            "preview": true
+        },
+        "viewportWidth": 432
+    },
+
+    "parent": ["framos/feature-grid"],
+
+    "attributes": {
+        "containerClasses": {
+            "type": "array",
+            "default": []
+        },
+        "count": {
+            "type": "string",
+            "default": "8,000+"
+        },
+        "countClasses": {
+            "type": "array",
+            "default": []
+        },
+        "desc": {
+            "type": "string",
+            "default": "Creators on the platform"
+        },
+        "descClasses": {
+            "type": "array",
+            "default": []
+        }
+    },
+    "textdomain": "framos-custom-blocks",
+    "editorScript": "file:./index.js"
+}
