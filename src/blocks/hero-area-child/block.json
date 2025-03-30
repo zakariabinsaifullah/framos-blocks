@@ -1,0 +1,35 @@
+{
+    "apiVersion": 3,
+    "name": "framos/hero-area-child",
+    "version": "1.0.0",
+    "title": "Hero Area child",
+    "category": "framos-blocks",
+    "description": "product screenshot block",
+    "parent": ["framos/hero-area"],
+    "supports": {
+        "html": false,
+        "anchor": true,
+        "align": ["wide", "full"]
+    },
+    "example": {
+        "attributes": {
+            "preview": true
+        },
+        "viewportWidth": 432
+    },
+    "attributes": {
+        "icon": {
+            "type": "object"
+        },
+
+        "logoLink": {
+            "type": "object",
+            "default": {
+                "url": "#",
+                "isExternal": false
+            }
+        }
+    },
+    "textdomain": "framos-custom-blocks",
+    "editorScript": "file:./index.js"
+}

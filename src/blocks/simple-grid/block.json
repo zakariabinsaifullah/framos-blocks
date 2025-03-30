@@ -1,0 +1,78 @@
+{
+    "apiVersion": 3,
+    "name": "framos/simple-grid",
+    "version": "1.0.0",
+    "title": "Simple Grid",
+    "category": "framos-blocks",
+    "description": "product screenshot block",
+    "supports": {
+        "html": false,
+        "anchor": true,
+        "align": ["wide", "full"]
+    },
+    "example": {
+        "attributes": {
+            "preview": true
+        },
+        "viewportWidth": 432
+    },
+    "attributes": {
+        "containerClasses": {
+            "type": "array",
+            "default": []
+        },
+        "subtitle": {
+            "type": "string",
+            "default": "Award winning support"
+        },
+        "subtitleClasses": {
+            "type": "array",
+            "default": []
+        },
+        "title": {
+            "type": "string",
+            "default": "We’re here to help"
+        },
+        "titleClass": {
+            "type": "array",
+            "default": []
+        },
+        "headingLevel": {
+            "type": "string",
+            "default": "h2"
+        },
+        "desc": {
+            "type": "string",
+            "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, egestas tempus tellus etiam sed. Quam a scelerisque amet ullamcorper eu enim et fermentum, augue. Aliquet amet volutpat quisque ut interdum tincidunt duis."
+        },
+        "descClass": {
+            "type": "array",
+            "default": []
+        },
+        "photo": {
+            "type": "object"
+        },
+        "photoClass": {
+            "type": "array",
+            "default": []
+        },
+
+        "primaryButtonText": {
+            "type": "string",
+            "default": "Visit the help center"
+        },
+        "primaryButtonUrl": {
+            "type": "object",
+            "default": {
+                "url": "#",
+                "isExternal": false
+            }
+        },
+        "primaryButtonClasses": {
+            "type": "array",
+            "default": []
+        }
+    },
+    "textdomain": "framos-custom-blocks",
+    "editorScript": "file:./index.js"
+}
