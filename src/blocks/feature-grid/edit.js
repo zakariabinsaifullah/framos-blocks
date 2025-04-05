@@ -1,11 +1,11 @@
 /**
  * WordPress dependencies
  */
-import { BlockControls, InnerBlocks, RichText, useBlockProps, useInnerBlocksProps } from '@wordpress/block-editor';
+import { BlockControls, RichText, useBlockProps, useInnerBlocksProps } from '@wordpress/block-editor';
 import { createBlock } from '@wordpress/blocks';
-import { dispatch, select } from '@wordpress/data';
 import { DropdownMenu, ToolbarGroup } from '@wordpress/components';
-import { Fragment, useEffect, useRef } from '@wordpress/element';
+import { dispatch, select } from '@wordpress/data';
+import { Fragment } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import Inspector from './inspector';
 
@@ -26,7 +26,30 @@ export default function Edit({ attributes, setAttributes, clientId }) {
         },
         {
             allowedBlocks: ['framos/feature-grid-child'],
-            template: [['framos/feature-grid-child']],
+            template: [
+                ['framos/feature-grid-child'],
+                [
+                    'framos/feature-grid-child',
+                    {
+                        count: '3%',
+                        desc: 'Flat platform fee'
+                    }
+                ],
+                [
+                    'framos/feature-grid-child',
+                    {
+                        count: '99.9%',
+                        desc: 'Uptime guarantee'
+                    }
+                ],
+                [
+                    'framos/feature-grid-child',
+                    {
+                        count: '$70M',
+                        desc: 'Paid out to creators'
+                    }
+                ]
+            ],
             renderAppender: false,
             templateLock: false
         }

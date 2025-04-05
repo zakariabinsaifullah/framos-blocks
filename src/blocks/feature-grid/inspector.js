@@ -43,7 +43,7 @@ const Inspector = ({ attributes, setAttributes }) => {
                         help={__('Add classes to the heading wrapper.', 'framos')}
                     />
                 </PanelBody>
-                <PanelBody title={__('Title', 'framos')} initialOpen={false}>
+                <PanelBody title={__('Sub Heading', 'framos')} initialOpen={false}>
                     <TextControl
                         label={__('Text', 'framos')}
                         value={title}
@@ -53,8 +53,8 @@ const Inspector = ({ attributes, setAttributes }) => {
                     <FormTokenField
                         value={titleClasses}
                         onChange={v => setAttributes({ titleClasses: v.map(className => className.replace(/\s+/g, '-')) })}
-                        label={__('Title Classes', 'framos')}
-                        help={__('Add classes to the title wrapper.', 'framos')}
+                        label={__('Classes', 'framos')}
+                        help={__('Add classes to the text.', 'framos')}
                     />
                 </PanelBody>
             </InspectorControls>

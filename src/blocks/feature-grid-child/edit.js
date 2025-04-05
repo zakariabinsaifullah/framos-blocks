@@ -1,12 +1,10 @@
 /**
  * WordPress dependencies
  */
-import { BlockControls, InnerBlocks, RichText, useBlockProps } from '@wordpress/block-editor';
+import { RichText, useBlockProps } from '@wordpress/block-editor';
 import { createBlock } from '@wordpress/blocks';
 import { dispatch, select } from '@wordpress/data';
-import { DropdownMenu, ToolbarGroup } from '@wordpress/components';
-import { Fragment, useEffect, useRef } from '@wordpress/element';
-import { __ } from '@wordpress/i18n';
+import { Fragment } from '@wordpress/element';
 import Inspector from './inspector';
 
 import classnames from 'classnames';
@@ -48,7 +46,7 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 
                     <RichText
                         tagName="dd"
-                        className={classnames('order-first text-3xl font-semibold tracking-tight text-gray-900', {
+                        className={classnames('order-first text-3xl font-semibold tracking-tight text-gray-900 m-0', {
                             [countClasses.join(' ')]: countClasses.length > 0 && countClasses
                         })}
                         value={count}
