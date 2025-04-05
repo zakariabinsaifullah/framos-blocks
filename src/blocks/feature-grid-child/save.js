@@ -32,7 +32,7 @@ export default function Save({ attributes }) {
 
                     <RichText.Content
                         tagName="dd"
-                        className={classnames('order-first text-3xl font-semibold tracking-tight text-gray-900', {
+                        className={classnames('order-first text-3xl font-semibold tracking-tight text-gray-900 m-0', {
                             [countClasses.join(' ')]: countClasses.length > 0 && countClasses
                         })}
                         value={count}

@@ -1,0 +1,87 @@
+{
+    "apiVersion": 3,
+    "name": "framos/faqs",
+    "version": "1.0.0",
+    "title": "FAQs",
+    "category": "framos-blocks",
+    "description": "A block to display frequently asked questions.",
+    "supports": {
+        "html": false,
+        "anchor": true,
+        "align": ["wide", "full"]
+    },
+
+    "example": {
+        "attributes": {
+            "preview": true
+        },
+        "viewportWidth": 432
+    },
+
+    "attributes": {
+        "faqs": {
+            "type": "array",
+            "default": [
+                {
+                    "question": "What's the best thing about Switzerland?",
+                    "answer": "The flag is a big plus. It's simple, recognizable, and represents the country's unity and neutrality."
+                },
+                {
+                    "question": "How do I get support for my camera module?",
+                    "answer": "You can reach out to our support team via the contact form or connect directly with your technical sales engineer."
+                }
+            ]
+        },
+        "containerClasses": {
+            "type": "array",
+            "default": []
+        },
+        "heading": {
+            "type": "string",
+            "default": "Frequently Asked Questions"
+        },
+        "headingLevel": {
+            "type": "string",
+            "default": "h2"
+        },
+        "headingClasses": {
+            "type": "array",
+            "default": []
+        },
+        "subHeading": {
+            "type": "string",
+            "default": "If you have any questions, please reach out to us."
+        },
+        "subHeadingLevel": {
+            "type": "string",
+            "default": "p"
+        },
+        "subHeadingClasses": {
+            "type": "array",
+            "default": []
+        },
+        "questionTag": {
+            "type": "string",
+            "default": "h3"
+        },
+        "questionClasses": {
+            "type": "array",
+            "default": []
+        },
+        "questionTextClasses": {
+            "type": "array",
+            "default": []
+        },
+        "answerClasses": {
+            "type": "array",
+            "default": []
+        },
+        "answerTextClasses": {
+            "type": "array",
+            "default": []
+        }
+    },
+    "textdomain": "framos-custom-blocks",
+    "editorScript": "file:./index.js",
+    "viewScript": "file:./view.js"
+}
