@@ -21,6 +21,10 @@
     'vertical-carousel',
     'slide',
     'feature-card',
+    'media-text',
+    'simple-grid',
+    'hero-area',
+    'hero-area-child'
     'faq',
     'faq-child',
     'feature-grid',
