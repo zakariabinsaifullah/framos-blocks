@@ -21,4 +21,8 @@
     'vertical-carousel',
     'slide',
     'feature-card',
+    'faq',
+    'faq-child',
+    'feature-grid',
+    'feature-grid-child',
  ];
