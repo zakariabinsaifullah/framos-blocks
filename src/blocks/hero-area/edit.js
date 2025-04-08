@@ -1,9 +1,8 @@
 /**
  * WordPress dependencies
  */
-import { BlockControls, MediaPlaceholder, RichText, useBlockProps, useInnerBlocksProps } from '@wordpress/block-editor';
+import { MediaPlaceholder, RichText, useBlockProps, useInnerBlocksProps } from '@wordpress/block-editor';
 import { createBlock } from '@wordpress/blocks';
-import { DropdownMenu, ToolbarGroup } from '@wordpress/components';
 import { dispatch, select } from '@wordpress/data';
 import { Fragment } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
@@ -38,11 +37,12 @@ export default function Edit({ attributes, setAttributes, clientId }) {
     // Inner blocks
     const innerBlockProps = useInnerBlocksProps(
         {
-            className: 'flex flex-row lg:flex-wrap items-center justify-around md:justify-between gap-x-6 gap-y-9 py-10 flex-wrap'
+            className:
+                'flex flex-row lg:flex-nowrap items-center justify-around md:justify-between gap-x-6 gap-y-9 py-10 flex-wrap max-w-full'
         },
         {
-            allowedBlocks: ['framos/hero-area-child'],
-            template: [['framos/hero-area-child'], ['framos/hero-area-child'], ['framos/hero-area-child'], ['framos/hero-area-child']],
+            allowedBlocks: ['framos/logo'],
+            template: [['framos/logo'], ['framos/logo'], ['framos/logo'], ['framos/logo']],
             renderAppender: false,
             templateLock: false
         }
@@ -50,7 +50,7 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 
     // Append Button
     const appendBtn = () => {
-        const newBlock = createBlock('framos/hero-area-child', {});
+        const newBlock = createBlock('framos/logo', {});
         dispatch('core/block-editor').insertBlock(newBlock, select('core/block-editor').getBlockOrder(clientId).length, clientId);
     };
 
@@ -64,8 +64,9 @@ export default function Edit({ attributes, setAttributes, clientId }) {
                         [containerClasses.join(' ')]: containerClasses.length > 0 && containerClasses
                     })}
                 >
-                    <div className="w-full max-w-7xl mx-auto px-4 lg:px-8">
+                    <div className="w-full max-w-7xl mx-auto px-4 lg:px-8 box-border">
                         <RichText
+                            tagName="P"
                             className={classnames('text-sm font-medium text-black text-center mb-5', {
                                 [subtitleClasses.join(' ')]: subtitleClasses.length > 0 && subtitleClasses
                             })}
@@ -92,9 +93,9 @@ export default function Edit({ attributes, setAttributes, clientId }) {
                         />
                         <div className="flex flex-col min-[550px]:flex-row items-center justify-center gap-8 pb-10 sm:pb-14">
                             <a
-                                href="#"
+                                // href="#"
                                 className={classnames(
-                                    'bg-gray-900 max-[550px]:w-full text-white rounded-xl cursor-pointer font-medium text-center shadow-xs transition-all duration-500 py-3 px-8 text-sm hover:bg-gray-800',
+                                    'bg-gray-900 max-[550px]:w-full text-white! no-underline! rounded-xl cursor-pointer font-medium text-center shadow-xs transition-all duration-500 py-3 px-8 text-sm hover:bg-gray-800',
                                     {
                                         [primaryButtonClasses.join(' ')]: primaryButtonClasses.length > 0 && primaryButtonClasses
                                     }
@@ -108,9 +109,9 @@ export default function Edit({ attributes, setAttributes, clientId }) {
                                 />
                             </a>
                             <a
-                                href="#"
+                                // href="#"
                                 className={classnames(
-                                    'py-3 px-8 max-[550px]:w-full text-center rounded-xl border border-gray-300 bg-white text-sm font-medium text-gray-900 shadow-sm shadow-transparent transition-all duration-500 hover:bg-gray-200 hover:shadow-gray-300 hover:border-gray-200',
+                                    'py-3 px-8 max-[550px]:w-full text-center no-underline! rounded-xl border border-gray-300 bg-white text-sm font-medium text-gray-900 shadow-sm shadow-transparent transition-all duration-500 hover:bg-gray-200 hover:shadow-gray-300 hover:border-gray-200',
                                     {
                                         [secondaryButtonClasses.join(' ')]: secondaryButtonClasses.length > 0 && secondaryButtonClasses
                                     }
@@ -125,12 +126,12 @@ export default function Edit({ attributes, setAttributes, clientId }) {
                                 <span aria-hidden="true">→</span>
                             </a>
                         </div>
-                        <div className="p-2.5 border border-gray-300 rounded-3xl mb-6">
+                        <div className="p-2.5 border border-gray-300 rounded-3xl mb-6 box-border max-w-full">
                             {photo ? (
                                 <img
                                     src={photo.url}
                                     alt={photo.alt}
-                                    className={classnames(' hidden sm:block w-full h-auto rounded-2xl object-cover', {
+                                    className={classnames('hidden sm:block w-full h-auto rounded-2xl object-cover max-w-full', {
                                         [photoClass.join(' ')]: photoClass.length > 0 && photoClass
                                     })}
                                 />
@@ -139,11 +140,10 @@ export default function Edit({ attributes, setAttributes, clientId }) {
                                     onSelect={el => {
                                         setAttributes({ photo: el });
                                     }}
-                                    src="https://tailwindcss.com/plus-assets/img/component-images/dark-project-app-screenshot.png"
                                     allowedTypes={['image']}
                                     multiple={false}
                                     value={photo?.id}
-                                    labels={{ title: 'The Image' }}
+                                    labels={{ title: __('Upload Image', 'framos') }}
                                 />
                             )}
                         </div>

@@ -1,8 +1,7 @@
 /**
  * WordPress dependencies
  */
-import { RichText, useBlockProps, InnerBlocks } from '@wordpress/block-editor';
-import { Fragment } from '@wordpress/element';
+import { RichText, useBlockProps } from '@wordpress/block-editor';
 import classnames from 'classnames';
 
 /**
@@ -74,24 +73,24 @@ export default function Save({ attributes }) {
                     </svg>
                 </div>
                 <div className="relative mx-auto max-w-7xl py-24 sm:py-32 lg:px-8 lg:py-40">
-                    <div className="pl-6 pr-6 md:ml-auto md:w-2/3 md:pl-16 lg:w-1/2 lg:pl-24 lg:pr-0 xl:pl-32">
+                    <div className="pl-6 pr-6 md:ml-auto md:w-2/3 md:pl-16 lg:w-1/2 lg:pl-24 lg:pr-0 xl:pl-24 box-border">
                         <RichText.Content
                             tagName="p"
-                            className={classnames('text-base/7 font-semibold text-indigo-400', {
+                            className={classnames('text-base/7 font-semibold text-indigo-400 mt-0 mb-0', {
                                 [subtitleClasses.join(' ')]: subtitleClasses?.length > 0 && subtitleClasses
                             })}
                             value={subtitle}
                         />
                         <RichText.Content
                             tagName={HeadingTag}
-                            className={classnames('mt-2 text-4xl font-semibold tracking-tight text-white sm:text-5xl', {
+                            className={classnames('mt-2 text-4xl font-semibold tracking-tight text-white! sm:text-5xl', {
                                 [titleClass.join(' ')]: titleClass?.length > 0 && titleClass
                             })}
                             value={title}
                         />
                         <RichText.Content
-                            tagName="div"
-                            className={classnames('mt-6 text-base/7 text-gray-300', {
+                            tagName="p"
+                            className={classnames('mt-6 text-base/7 text-gray-300 mt-0 mb-0', {
                                 [descClass.join(' ')]: descClass?.length > 0 && descClass
                             })}
                             value={desc}
@@ -104,7 +103,7 @@ export default function Save({ attributes }) {
                                     rel: 'noopener noreferrer'
                                 })}
                                 className={classnames(
-                                    'inline-flex rounded-md bg-white/10 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white',
+                                    'inline-flex rounded-md bg-white/10 px-3.5 py-2.5 text-sm font-semibold text-white! no-underline! shadow-sm hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white',
                                     {
                                         [primaryButtonClasses.join(' ')]: primaryButtonClasses.length > 0 && primaryButtonClasses
                                     }

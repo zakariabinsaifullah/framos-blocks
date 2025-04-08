@@ -1,0 +1,33 @@
+{
+    "apiVersion": 3,
+    "name": "framos/tab",
+    "title": "Tab",
+    "category": "framos-blocks",
+    "description": "Single tab block",
+    "supports": {
+        "html": false,
+        "anchor": true,
+        "align": ["wide", "full"]
+    },
+    "parent": ["framos/tabs"],
+    "example": {
+        "attributes": {
+            "preview": true
+        },
+        "viewportWidth": 432
+    },
+    "attributes": {
+        "tabId": {
+            "type": "string"
+        },
+        "tabParentId": {
+            "type": "string"
+        },
+        "containerClasses": {
+            "type": "array",
+            "default": []
+        }
+    },
+    "textdomain": "framos-custom-blocks",
+    "editorScript": "file:./index.js"
+}

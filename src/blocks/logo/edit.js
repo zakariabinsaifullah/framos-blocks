@@ -1,13 +1,8 @@
 /**
  * WordPress dependencies
  */
-import { BlockControls, MediaPlaceholder, RichText, useBlockProps, useInnerBlocksProps, MediaUpload } from '@wordpress/block-editor';
-import { createBlock } from '@wordpress/blocks';
-import { DropdownMenu, ToolbarGroup } from '@wordpress/components';
-import { dispatch, select } from '@wordpress/data';
+import { MediaUpload, useBlockProps } from '@wordpress/block-editor';
 import { Fragment } from '@wordpress/element';
-import { __ } from '@wordpress/i18n';
-import classnames from 'classnames';
 import Inspector from './inspector';
 
 /**
@@ -26,7 +21,7 @@ export default function Edit({ attributes, setAttributes, clientId }) {
             <div {...blockProps}>
                 <a href="javascript:;" className="text-gray-600 transition-all duration-500 hover:text-red-600">
                     {icon && icon.url ? (
-                        <img src={icon.url} alt={icon.alt} />
+                        <img src={icon.url} alt={icon.alt} className="max-w-full" />
                     ) : (
                         <MediaUpload
                             onSelect={media => setAttributes({ icon: media })}

@@ -1,0 +1,50 @@
+{
+    "apiVersion": 3,
+    "name": "framos/card",
+    "title": "Card",
+    "category": "framos-blocks",
+    "description": "Single card block",
+    "supports": {
+        "html": false,
+        "anchor": true,
+        "align": ["wide", "full"]
+    },
+    "example": {
+        "attributes": {
+            "preview": true
+        },
+        "viewportWidth": 432
+    },
+    "parent": ["framos/tab"],
+    "attributes": {
+        "image": {
+            "type": "object"
+        },
+        "title": {
+            "type": "string",
+            "default": "Insights"
+        },
+        "description": {
+            "type": "string",
+            "default": "Our platform provides valuable insights to help you optimize your business strategy"
+        },
+        "containerClasses": {
+            "type": "array",
+            "default": []
+        },
+        "imageClasses": {
+            "type": "array",
+            "default": []
+        },
+        "titleClasses": {
+            "type": "array",
+            "default": []
+        },
+        "descriptionClasses": {
+            "type": "array",
+            "default": []
+        }
+    },
+    "textdomain": "framos-custom-blocks",
+    "editorScript": "file:./index.js"
+}

@@ -1,0 +1,93 @@
+{
+    "apiVersion": 3,
+    "name": "framos/content-tabs",
+    "version": "1.0.0",
+    "title": "Content Tabs",
+    "category": "framos-blocks",
+    "description": "content and tabs",
+    "supports": {
+        "html": false,
+        "anchor": true,
+        "align": ["wide", "full"]
+    },
+    "example": {
+        "attributes": {
+            "preview": true
+        },
+        "viewportWidth": 432
+    },
+    "attributes": {
+        "containerClasses": {
+            "type": "array",
+            "default": []
+        },
+        "subtitle": {
+            "type": "string",
+            "default": "Global Work Automation Hub"
+        },
+        "subtitleClasses": {
+            "type": "array",
+            "default": []
+        },
+        "title": {
+            "type": "string",
+            "default": "Elevate Your Workforce Globally"
+        },
+        "titleClass": {
+            "type": "array",
+            "default": []
+        },
+        "headingLevel": {
+            "type": "string",
+            "default": "h2"
+        },
+        "desc": {
+            "type": "string",
+            "default": "Revolutionize your workforce with our seamless hiring solutions. Find and attract top talent globally while optimizing your recruitment process for success."
+        },
+        "descClass": {
+            "type": "array",
+            "default": []
+        },
+        "photo": {
+            "type": "object"
+        },
+        "photoClass": {
+            "type": "array",
+            "default": []
+        },
+
+        "primaryButtonText": {
+            "type": "string",
+            "default": " Book a Demo"
+        },
+        "primaryButtonUrl": {
+            "type": "object",
+            "default": {
+                "url": "#",
+                "isExternal": false
+            }
+        },
+        "primaryButtonClasses": {
+            "type": "array",
+            "default": []
+        },
+        "secondaryButtonText": {
+            "type": "string",
+            "default": " Sign Up for Free"
+        },
+        "secondaryButtonUrl": {
+            "type": "object",
+            "default": {
+                "url": "#",
+                "isExternal": false
+            }
+        },
+        "secondaryButtonClasses": {
+            "type": "array",
+            "default": []
+        }
+    },
+    "textdomain": "framos-custom-blocks",
+    "editorScript": "file:./index.js"
+}

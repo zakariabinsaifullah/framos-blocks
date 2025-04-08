@@ -24,8 +24,12 @@
     'media-text',
     'simple-grid',
     'hero-area',
-    'hero-area-child',
+    'logo',
     'faqs',
     'feature-grid',
     'feature-grid-child',
+    'content-tabs',
+    'tabs',
+    'tab',
+    'card'
  ];

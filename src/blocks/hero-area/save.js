@@ -31,7 +31,7 @@ export default function Save({ attributes }) {
     const blockProps = useBlockProps.save();
     // Inner blocks
     const innerBlockProps = useInnerBlocksProps.save({
-        className: 'flex flex-row lg:flex-wrap items-center justify-around md:justify-between gap-x-6 gap-y-9 py-10 flex-wrap'
+        className: 'flex flex-row lg:flex-nowrap items-center justify-around md:justify-between gap-x-6 gap-y-9 py-10 flex-wrap'
     });
 
     return (
@@ -54,7 +54,7 @@ export default function Save({ attributes }) {
 
                     {title && (
                         <RichText.Content
-                            tagName={headingLevel || 'h2'}
+                            tagName={headingLevel}
                             className={classnames('font-manrope font-semibold text-5xl leading-tight text-center mb-5', {
                                 [titleClass.join(' ')]: titleClass?.length > 0 && titleClass
                             })}
@@ -81,7 +81,7 @@ export default function Save({ attributes }) {
                                     rel: 'noopener noreferrer'
                                 })}
                                 className={classnames(
-                                    'bg-gray-900 max-[550px]:w-full text-white rounded-xl cursor-pointer font-medium text-center shadow-xs transition-all duration-500 py-3 px-8 text-sm hover:bg-gray-800',
+                                    'bg-gray-900 max-[550px]:w-full text-white! no-underline! rounded-xl cursor-pointer font-medium text-center shadow-xs transition-all duration-500 py-3 px-8 text-sm hover:bg-gray-800',
                                     {
                                         [primaryButtonClasses.join(' ')]: primaryButtonClasses?.length > 0 && primaryButtonClasses
                                     }
@@ -99,7 +99,7 @@ export default function Save({ attributes }) {
                                     rel: 'noopener noreferrer'
                                 })}
                                 className={classnames(
-                                    'py-3 px-8 max-[550px]:w-full text-center rounded-xl border border-gray-300 bg-white text-sm font-medium text-gray-900 shadow-sm shadow-transparent transition-all duration-500 hover:bg-gray-200 hover:shadow-gray-300 hover:border-gray-200',
+                                    'py-3 px-8 max-[550px]:w-full text-center no-underline! rounded-xl border border-gray-300 bg-white text-sm font-medium text-gray-900 shadow-sm shadow-transparent transition-all duration-500 hover:bg-gray-200 hover:shadow-gray-300 hover:border-gray-200',
                                     {
                                         [secondaryButtonClasses.join(' ')]: secondaryButtonClasses?.length > 0 && secondaryButtonClasses
                                     }
@@ -116,7 +116,7 @@ export default function Save({ attributes }) {
                             <img
                                 src={photo.url}
                                 alt={photo.alt || ''}
-                                className={classnames('hidden sm:block w-full h-auto rounded-2xl object-cover', {
+                                className={classnames('block w-full h-auto rounded-2xl object-cover', {
                                     [photoClass.join(' ')]: photoClass?.length > 0 && photoClass
                                 })}
                             />

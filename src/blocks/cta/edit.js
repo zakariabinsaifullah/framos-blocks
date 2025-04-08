@@ -76,7 +76,7 @@ export default function Edit({ attributes, setAttributes, clientId }) {
                         />
                         <div className="mt-10 flex flex-col items-center justify-center gap-y-8 sm:flex-row sm:gap-x-6">
                             <a
-                                href="#"
+                                // href="#"
                                 className={classnames(
                                     'btn-main rounded-xl bg-primary px-11 py-2.5 text-base border-0 border-t-[3px] text-white shadow-sm hover:bg-framosDarkBlue dark:bg-primary dark:text-white w-full sm:w-auto justify-center flex items-center border-t border-primary100 dark:border-primary100 hover:border-primary hover:text-white',
                                     {
@@ -109,7 +109,7 @@ export default function Edit({ attributes, setAttributes, clientId }) {
                                 </div>
                             </a>
                             <a
-                                href="#"
+                                // href="#"
                                 className={classnames('text-sm font-semibold leading-6 text-white hover:text-primary', {
                                     [secondaryButtonClasses.join(' ')]: secondaryButtonClasses.length > 0 && secondaryButtonClasses
                                 })}

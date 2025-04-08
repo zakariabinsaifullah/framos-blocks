@@ -1,10 +1,8 @@
 /**
  * WordPress dependencies
  */
-import { BlockControls, MediaPlaceholder, RichText, useBlockProps, useInnerBlocksProps } from '@wordpress/block-editor';
-import { createBlock } from '@wordpress/blocks';
+import { BlockControls, MediaPlaceholder, RichText, useBlockProps } from '@wordpress/block-editor';
 import { DropdownMenu, ToolbarGroup } from '@wordpress/components';
-import { dispatch, select } from '@wordpress/data';
 import { Fragment } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import classnames from 'classnames';
@@ -78,9 +76,10 @@ export default function Edit({ attributes, setAttributes, clientId }) {
                         )}
                     </div>
                     <div className="relative mx-auto max-w-7xl py-24 sm:py-32 lg:px-8 lg:py-40">
-                        <div className="pl-6 pr-6 md:ml-auto md:w-2/3 md:pl-16 lg:w-1/2 lg:pl-24 lg:pr-0 xl:pl-32">
+                        <div className="pl-6 pr-6 md:ml-auto md:w-2/3 md:pl-16 lg:w-1/2 lg:pl-24 lg:pr-0 xl:pl-24 box-border">
                             <RichText
-                                className={classnames('text-base/7 font-semibold text-indigo-400', {
+                                tagName="p"
+                                className={classnames('text-base/7 font-semibold text-indigo-400 mb-0! mt-0!', {
                                     [subtitleClasses.join(' ')]: subtitleClasses.length > 0 && subtitleClasses
                                 })}
                                 value={subtitle}
@@ -89,7 +88,7 @@ export default function Edit({ attributes, setAttributes, clientId }) {
                             />
                             <RichText
                                 tagName={headingLevel}
-                                className={classnames('mt-2 text-4xl font-semibold tracking-tight text-white sm:text-5xl', {
+                                className={classnames('mt-2 text-4xl font-semibold tracking-tight text-white! sm:text-5xl', {
                                     [titleClass.join(' ')]: titleClass.length > 0 && titleClass
                                 })}
                                 value={title}
@@ -97,7 +96,8 @@ export default function Edit({ attributes, setAttributes, clientId }) {
                                 placeholder={__('Add a title', 'framos')}
                             />
                             <RichText
-                                className={classnames('mt-6 text-base/7 text-gray-300', {
+                                tagName="p"
+                                className={classnames('mt-6 text-base/7 text-gray-300 mt-0! mb-0!', {
                                     [descClass.join(' ')]: descClass.length > 0 && descClass
                                 })}
                                 value={desc}
@@ -106,9 +106,9 @@ export default function Edit({ attributes, setAttributes, clientId }) {
                             />
                             <div className="mt-8">
                                 <a
-                                    href="#"
+                                    // href="#"
                                     className={classnames(
-                                        'inline-flex rounded-md bg-white/10 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white',
+                                        'inline-flex rounded-md bg-white/10 px-3.5 py-2.5 text-sm font-semibold text-white! no-underline! shadow-sm hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white',
                                         {
                                             [primaryButtonClasses.join(' ')]: primaryButtonClasses.length > 0 && primaryButtonClasses
                                         }
