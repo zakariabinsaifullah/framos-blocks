@@ -1,7 +1,7 @@
 /**
  * WordPress dependencies
  */
-import { useBlockProps, RichText } from '@wordpress/block-editor';
+import { RichText, useBlockProps } from '@wordpress/block-editor';
 import classnames from 'classnames';
 
 /**
@@ -57,7 +57,7 @@ export default function Save({ attributes }) {
                         <div className="mx-auto max-w-md text-center lg:mx-0 lg:flex-auto lg:py-32 lg:text-left">
                             <RichText.Content
                                 tagName={HeadingTag}
-                                className={classnames('text-balance text-3xl font-semibold tracking-tight text-white sm:text-4xl', {
+                                className={classnames('text-balance text-3xl font-semibold tracking-tight text-white! sm:text-4xl', {
                                     [titleClass.join(' ')]: titleClass?.length > 0 && titleClass
                                 })}
                                 value={title}
@@ -77,7 +77,7 @@ export default function Save({ attributes }) {
                                         rel: 'noopener noreferrer'
                                     })}
                                     className={classnames(
-                                        'rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white',
+                                        'rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 no-underline! shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white',
                                         {
                                             [primaryButtonClasses.join(' ')]: primaryButtonClasses.length > 0 && primaryButtonClasses
                                         }
@@ -92,7 +92,7 @@ export default function Save({ attributes }) {
                                         target: '_blank',
                                         rel: 'noopener noreferrer'
                                     })}
-                                    className={classnames('text-sm/6 font-semibold text-white', {
+                                    className={classnames('text-sm/6 font-semibold text-white! no-underline!', {
                                         [secondaryButtonClasses.join(' ')]: secondaryButtonClasses.length > 0 && secondaryButtonClasses
                                     })}
                                 >

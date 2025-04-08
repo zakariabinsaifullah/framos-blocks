@@ -1,0 +1,353 @@
+# Copyright (C) 2025 FRAMOS
+# This file is distributed under the GPL2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Framos Custom Blocks 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/framos-custom-blocks\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2025-04-08T08:04:28+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.10.0\n"
+"X-Domain: framos-custom-blocks\n"
+
+#. Plugin Name of the plugin
+#: framos-custom-blocks.php
+msgid "Framos Custom Blocks"
+msgstr ""
+
+#. Description of the plugin
+#: framos-custom-blocks.php
+msgid "Custom Gutenberg blocks for FRAMOS"
+msgstr ""
+
+#. Author of the plugin
+#: framos-custom-blocks.php
+msgid "FRAMOS"
+msgstr ""
+
+#: inc/framos-init.php:42
+msgid "Framos Blocks"
+msgstr ""
+
+#: src/blocks/card/inspector.js:13
+msgid "Container"
+msgstr ""
+
+#: src/blocks/card/inspector.js:17
+#: src/blocks/card/inspector.js:25
+#: src/blocks/card/inspector.js:33
+#: src/blocks/card/inspector.js:41
+msgid "Classes"
+msgstr ""
+
+#: src/blocks/card/inspector.js:18
+msgid "Add classes to the container"
+msgstr ""
+
+#: src/blocks/card/inspector.js:21
+msgid "Image"
+msgstr ""
+
+#: src/blocks/card/inspector.js:26
+msgid "Add classes to the image"
+msgstr ""
+
+#: src/blocks/card/inspector.js:29
+msgid "Title"
+msgstr ""
+
+#: src/blocks/card/inspector.js:34
+msgid "Add classes to the title"
+msgstr ""
+
+#: src/blocks/card/inspector.js:37
+msgid "Description"
+msgstr ""
+
+#: src/blocks/card/inspector.js:42
+msgid "Add classes to the description"
+msgstr ""
+
+#: src/blocks/tab/inspector.js:17
+msgid "Wrapper Classes"
+msgstr ""
+
+#: src/blocks/tab/inspector.js:18
+msgid "Add classes to the grid"
+msgstr ""
+
+#: src/blocks/tabs/inspector.js:95
+msgid "Tab Items"
+msgstr ""
+
+#: src/blocks/tabs/inspector.js:120
+msgid "Add Tab"
+msgstr ""
+
+#: src/blocks/tabs/inspector.js:125
+msgid "Info Card"
+msgstr ""
+
+#: src/blocks/accordion/block.json
+msgctxt "block title"
+msgid "Accordion"
+msgstr ""
+
+#: src/blocks/accordion/block.json
+msgctxt "block description"
+msgid "Show content in an accordion."
+msgstr ""
+
+#: src/blocks/card/block.json
+msgctxt "block title"
+msgid "Card"
+msgstr ""
+
+#: src/blocks/card/block.json
+msgctxt "block description"
+msgid "Single card block"
+msgstr ""
+
+#: src/blocks/column-child/block.json
+msgctxt "block title"
+msgid "Single Column"
+msgstr ""
+
+#: src/blocks/column-child/block.json
+msgctxt "block description"
+msgid "Single column block"
+msgstr ""
+
+#: src/blocks/content-image/block.json
+msgctxt "block title"
+msgid "Content Image"
+msgstr ""
+
+#: src/blocks/content-image/block.json
+msgctxt "block description"
+msgid "Display content and image side by side."
+msgstr ""
+
+#: src/blocks/content-tabs/block.json
+msgctxt "block title"
+msgid "Content Tabs"
+msgstr ""
+
+#: src/blocks/content-tabs/block.json
+msgctxt "block description"
+msgid "content and tabs"
+msgstr ""
+
+#: src/blocks/cta/block.json
+msgctxt "block title"
+msgid "CTA"
+msgstr ""
+
+#: src/blocks/cta/block.json
+#: src/blocks/product-left/block.json
+msgctxt "block description"
+msgid "Call to action block"
+msgstr ""
+
+#: src/blocks/faqs/block.json
+msgctxt "block title"
+msgid "FAQs"
+msgstr ""
+
+#: src/blocks/faqs/block.json
+msgctxt "block description"
+msgid "A block to display frequently asked questions."
+msgstr ""
+
+#: src/blocks/feature-card/block.json
+msgctxt "block title"
+msgid "Feature Card"
+msgstr ""
+
+#: src/blocks/feature-card/block.json
+msgctxt "block description"
+msgid "Horizontal feature card with image slider"
+msgstr ""
+
+#: src/blocks/feature-grid-child/block.json
+msgctxt "block title"
+msgid "Feature Grid Child"
+msgstr ""
+
+#: src/blocks/feature-grid-child/block.json
+msgctxt "block description"
+msgid "A block for a feature grid child."
+msgstr ""
+
+#: src/blocks/feature-grid/block.json
+msgctxt "block title"
+msgid "Feature Grid"
+msgstr ""
+
+#: src/blocks/feature-grid/block.json
+msgctxt "block description"
+msgid "A block for a feature grid."
+msgstr ""
+
+#: src/blocks/full-bg/block.json
+msgctxt "block title"
+msgid "Full BG"
+msgstr ""
+
+#: src/blocks/full-bg/block.json
+#: src/blocks/product-list/block.json
+msgctxt "block description"
+msgid "A full-width background block with a heading, text, and two buttons."
+msgstr ""
+
+#: src/blocks/grid-centerd-child/block.json
+msgctxt "block title"
+msgid "Grid Child"
+msgstr ""
+
+#: src/blocks/grid-centerd-child/block.json
+msgctxt "block description"
+msgid "Grid Child block"
+msgstr ""
+
+#: src/blocks/grid-centerd/block.json
+msgctxt "block title"
+msgid "Grid Centerd "
+msgstr ""
+
+#: src/blocks/grid-centerd/block.json
+msgctxt "block description"
+msgid "Grid Centerd block"
+msgstr ""
+
+#: src/blocks/hero-area/block.json
+msgctxt "block title"
+msgid "Hero Area"
+msgstr ""
+
+#: src/blocks/hero-area/block.json
+#: src/blocks/media-text/block.json
+#: src/blocks/product/block.json
+#: src/blocks/simple-grid/block.json
+msgctxt "block description"
+msgid "product screenshot block"
+msgstr ""
+
+#: src/blocks/logo/block.json
+msgctxt "block title"
+msgid "Logo"
+msgstr ""
+
+#: src/blocks/logo/block.json
+msgctxt "block description"
+msgid "Single logo block for Framos."
+msgstr ""
+
+#: src/blocks/media-text/block.json
+msgctxt "block title"
+msgid "Media Text"
+msgstr ""
+
+#: src/blocks/offset-image/block.json
+msgctxt "block title"
+msgid "Offset Image"
+msgstr ""
+
+#: src/blocks/offset-image/block.json
+msgctxt "block description"
+msgid "An offset Image block"
+msgstr ""
+
+#: src/blocks/product-left/block.json
+msgctxt "block title"
+msgid "Product left"
+msgstr ""
+
+#: src/blocks/product-list/block.json
+msgctxt "block title"
+msgid "Product-list"
+msgstr ""
+
+#: src/blocks/product/block.json
+msgctxt "block title"
+msgid "Product"
+msgstr ""
+
+#: src/blocks/simple-grid/block.json
+msgctxt "block title"
+msgid "Simple Grid"
+msgstr ""
+
+#: src/blocks/slide/block.json
+msgctxt "block title"
+msgid "Single Slide"
+msgstr ""
+
+#: src/blocks/slide/block.json
+msgctxt "block description"
+msgid "Single slide with image and text"
+msgstr ""
+
+#: src/blocks/split-with-image-left/block.json
+msgctxt "block title"
+msgid "Split with Image Left"
+msgstr ""
+
+#: src/blocks/split-with-image-left/block.json
+msgctxt "block description"
+msgid "A split with image left block"
+msgstr ""
+
+#: src/blocks/split-with-image-right/block.json
+msgctxt "block title"
+msgid "Split with Image Right"
+msgstr ""
+
+#: src/blocks/split-with-image-right/block.json
+msgctxt "block description"
+msgid "A split with image right block"
+msgstr ""
+
+#: src/blocks/tab/block.json
+msgctxt "block title"
+msgid "Tab"
+msgstr ""
+
+#: src/blocks/tab/block.json
+msgctxt "block description"
+msgid "Single tab block"
+msgstr ""
+
+#: src/blocks/tabs/block.json
+msgctxt "block title"
+msgid "Tabs"
+msgstr ""
+
+#: src/blocks/tabs/block.json
+msgctxt "block description"
+msgid "Show content in a horizontal tab."
+msgstr ""
+
+#: src/blocks/three-columns/block.json
+msgctxt "block title"
+msgid "Three columns"
+msgstr ""
+
+#: src/blocks/three-columns/block.json
+msgctxt "block description"
+msgid "a three columns  block"
+msgstr ""
+
+#: src/blocks/vertical-carousel/block.json
+msgctxt "block title"
+msgid "Vertical Carousel"
+msgstr ""
+
+#: src/blocks/vertical-carousel/block.json
+msgctxt "block description"
+msgid "A custom block for a vertical carousel."
+msgstr ""

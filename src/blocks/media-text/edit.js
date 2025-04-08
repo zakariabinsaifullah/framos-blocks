@@ -1,10 +1,8 @@
 /**
  * WordPress dependencies
  */
-import { BlockControls, MediaPlaceholder, RichText, useBlockProps, useInnerBlocksProps } from '@wordpress/block-editor';
-import { createBlock } from '@wordpress/blocks';
+import { BlockControls, MediaPlaceholder, RichText, useBlockProps } from '@wordpress/block-editor';
 import { DropdownMenu, ToolbarGroup } from '@wordpress/components';
-import { dispatch, select } from '@wordpress/data';
 import { Fragment } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import classnames from 'classnames';
@@ -74,7 +72,7 @@ export default function Edit({ attributes, setAttributes, clientId }) {
                             <div className="mx-auto max-w-md text-center lg:mx-0 lg:flex-auto lg:py-32 lg:text-left">
                                 <RichText
                                     tagName={headingLevel}
-                                    className={classnames('text-balance text-3xl font-semibold tracking-tight text-white sm:text-4xl', {
+                                    className={classnames('text-balance text-3xl font-semibold tracking-tight text-white! sm:text-4xl', {
                                         [titleClass.join(' ')]: titleClass.length > 0 && titleClass
                                     })}
                                     value={title}
@@ -91,9 +89,9 @@ export default function Edit({ attributes, setAttributes, clientId }) {
                                 />
                                 <div className="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
                                     <a
-                                        href="#"
+                                        // href="#"
                                         className={classnames(
-                                            'rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white',
+                                            'rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm no-underline! hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white',
                                             {
                                                 [primaryButtonClasses.join(' ')]: primaryButtonClasses.length > 0 && primaryButtonClasses
                                             }
@@ -107,8 +105,8 @@ export default function Edit({ attributes, setAttributes, clientId }) {
                                         />
                                     </a>
                                     <a
-                                        href="#"
-                                        className={classnames('text-sm/6 font-semibold text-white', {
+                                        // href="#"
+                                        className={classnames('text-sm/6 font-semibold text-white! no-underline!', {
                                             [secondaryButtonClasses.join(' ')]: secondaryButtonClasses.length > 0 && secondaryButtonClasses
                                         })}
                                     >
@@ -122,7 +120,7 @@ export default function Edit({ attributes, setAttributes, clientId }) {
                                     </a>
                                 </div>
                             </div>
-                            <div className="relative mt-16 h-80 lg:mt-8">
+                            <div className="relative mt-16 h-80 lg:mt-8 w-full">
                                 {photo ? (
                                     <img
                                         src={photo.url}
@@ -139,11 +137,10 @@ export default function Edit({ attributes, setAttributes, clientId }) {
                                         onSelect={el => {
                                             setAttributes({ photo: el });
                                         }}
-                                        src="https://tailwindcss.com/plus-assets/img/component-images/dark-project-app-screenshot.png"
                                         allowedTypes={['image']}
                                         multiple={false}
                                         value={photo?.id}
-                                        labels={{ title: 'The Image' }}
+                                        labels={{ title: __('Upload Image', 'framos') }}
                                     />
                                 )}
                             </div>

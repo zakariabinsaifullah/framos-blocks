@@ -2,7 +2,6 @@
  * WordPress dependencies
  */
 import { useBlockProps } from '@wordpress/block-editor';
-import classnames from 'classnames';
 
 /**
  * Save function
@@ -31,6 +30,7 @@ export default function Save({ attributes }) {
                     <img
                         src={icon.url}
                         alt={icon.alt || 'Icon'} // Fallback for alt text
+                        className="max-w-full"
                     />
                 )}
             </a>

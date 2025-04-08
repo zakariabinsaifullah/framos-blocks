@@ -1,0 +1,70 @@
+{
+    "apiVersion": 3,
+    "name": "framos/tabs",
+    "title": "Tabs",
+    "category": "framos-blocks",
+    "description": "Show content in a horizontal tab.",
+    "supports": {
+        "html": false,
+        "anchor": true,
+        "align": ["wide", "full"]
+    },
+    "example": {
+        "attributes": {
+            "preview": true
+        },
+        "viewportWidth": 432
+    },
+    "attributes": {
+        "tabTitles": {
+            "type": "array",
+            "default": []
+        },
+        "tabChildCount": {
+            "type": "number",
+            "default": 4
+        },
+        "tabTitleClasses": {
+            "type": "array",
+            "default": []
+        },
+        "tiTitle": {
+            "type": "string",
+            "default": "Grow faster with pro’s help"
+        },
+        "tiTitleClasses": {
+            "type": "array",
+            "default": []
+        },
+        "tiDescription": {
+            "type": "string",
+            "default": "We are here to help you grow your business. Our team of experts is ready to assist you with any questions or concerns you may have."
+        },
+        "tiDescClasses": {
+            "type": "array",
+            "default": []
+        },
+        "tiButtonText": {
+            "type": "string",
+            "default": "Get Started"
+        },
+        "tiButtonLink": {
+            "type": "object",
+            "default": {
+                "url": "#",
+                "isExternal": false
+            }
+        },
+        "tiBtnClasses": {
+            "type": "array",
+            "default": []
+        },
+        "cardClasses": {
+            "type": "array",
+            "default": []
+        }
+    },
+    "textdomain": "framos-custom-blocks",
+    "editorScript": "file:./index.js",
+    "viewScript": "file:./view.js"
+}

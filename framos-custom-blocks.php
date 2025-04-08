@@ -23,4 +23,5 @@ define( 'FRAMOS_DIR', plugin_basename( __FILE__ ) );
 
 // include files
 require_once FRAMOS_PATH . 'inc/framos-init.php';
+require_once FRAMOS_PATH . 'inc/faqs.php';
 

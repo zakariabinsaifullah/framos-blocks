@@ -1,10 +1,10 @@
 {
     "apiVersion": 3,
-    "name": "framos/hero-area-child",
+    "name": "framos/logo",
     "version": "1.0.0",
-    "title": "Hero Area child",
+    "title": "Logo",
     "category": "framos-blocks",
-    "description": "product screenshot block",
+    "description": "Single logo block for Framos.",
     "parent": ["framos/hero-area"],
     "supports": {
         "html": false,
