@@ -59,7 +59,7 @@
 
         "primaryButtonText": {
             "type": "string",
-            "default": " Book a Demo"
+            "default": "Book a Demo"
         },
         "primaryButtonUrl": {
             "type": "object",
@@ -74,7 +74,7 @@
         },
         "secondaryButtonText": {
             "type": "string",
-            "default": " Sign Up for Free"
+            "default": "Sign Up for Free"
         },
         "secondaryButtonUrl": {
             "type": "object",
@@ -89,5 +89,6 @@
         }
     },
     "textdomain": "framos-custom-blocks",
-    "editorScript": "file:./index.js"
+    "editorScript": "file:./index.js",
+    "render": "file:./render.php"
 }
