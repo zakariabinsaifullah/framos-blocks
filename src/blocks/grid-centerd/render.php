@@ -1,5 +1,5 @@
 <?php
-/**
+ /*
  * Server-side render callback for the Gutenberg block.
  *
  * @param array  $attributes The block attributes.
@@ -56,4 +56,3 @@
 			</div>
 		</div>
 	</div>
-
