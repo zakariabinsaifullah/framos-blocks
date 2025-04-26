@@ -1,13 +1,8 @@
-/* eslint-disable jsx-a11y/no-noninteractive-element-to-interactive-role */
-/**
- * WordPress dependencies
- */
+
 import { InnerBlocks } from '@wordpress/block-editor';
 
-/**
- * Save function
- */
+import { InnerBlocks } from '@wordpress/block-editor';
 
-export default function save() {
+export default function Save() {
     return <InnerBlocks.Content />;
 }

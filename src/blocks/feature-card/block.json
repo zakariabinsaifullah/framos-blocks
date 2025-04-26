@@ -81,5 +81,6 @@
     "textdomain": "framos-custom-blocks",
     "editorScript": ["file:./index.js", "framos-swiper"],
     "style": ["file:./style-index.css", "framos-swiper"],
-    "viewScript": ["file:./view.js", "framos-swiper"]
+    "viewScript": ["file:./view.js", "framos-swiper"],
+    "render": "file:./render.php"
 }

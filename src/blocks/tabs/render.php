@@ -72,7 +72,7 @@
     $inner_blocks_content = $content;
 
     ?>
-    <div class="wp-block-framos-tabs">
+    <div  <?php echo get_block_wrapper_attributes(); ?>>
         <div class="tabs">
             <div class="block">
                 <ul class="tab-tiltes flex border-b border-gray-200 space-x-3 transition-all duration-300 -mb-px overflow-x-auto m-0 p-0">
