@@ -62,7 +62,6 @@ if( ! class_exists( 'Framos_Init' ) ) {
                 if ( file_exists( $block_path ) ) {
                     register_block_type( $block_path );
                 }
-
             }
             }
         }

@@ -10,13 +10,13 @@
         "anchor": true,
         "align": ["wide", "full"]
     },
+    "parent": ["framos/content-image"],
     "example": {
         "attributes": {
             "preview": true
         },
         "viewportWidth": 432
     },
-    "parent": ["framos/content-image"],
     "attributes": {
         "containerClasses": {
             "type": "array",
@@ -44,5 +44,6 @@
         }
     },
     "textdomain": "framos-custom-blocks",
-    "editorScript": "file:./index.js"
+    "editorScript": "file:./index.js",
+    "render": "file:./render.php"
 }
