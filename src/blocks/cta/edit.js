@@ -56,7 +56,7 @@ export default function Edit({ attributes, setAttributes, clientId }) {
                         <RichText
                             tagName={headingLevel}
                             className={classnames(
-                                'mx-auto max-w-2xl text-2xl md:text-3xl font-bold tracking-tight text-white sm:text-4xl',
+                                'mx-auto max-w-2xl text-2xl md:text-3xl font-bold tracking-tight text-white! sm:text-4xl',
                                 {
                                     [headingClasses.join(' ')]: headingClasses.length > 0 && headingClasses
                                 }
