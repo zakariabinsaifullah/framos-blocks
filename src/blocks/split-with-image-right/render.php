@@ -1,12 +1,6 @@
 <?php
 /**
  * Renders the block on the server.
- *
- * @param array    $attributes Block attributes.
- * @param string   $content    Block default content.
- * @param WP_Block $block      Block instance.
- *
- * @return string Returns the block content.
  */
     // Extract block attributes
     $container_classes     = isset( $attributes['containerClasses'] ) ? implode( ' ', $attributes['containerClasses'] ) : '';
@@ -32,9 +26,7 @@
 
     // Build the block classes
     $wrapper_attributes = get_block_wrapper_attributes();
-    
-    // Start output buffering
-    ob_start();
+
     ?>
     <div <?php echo $wrapper_attributes; ?>>
         <div class="bg-white">

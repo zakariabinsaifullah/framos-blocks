@@ -2,10 +2,6 @@
 /**
  * Render function for the CTA Block with Left Image
  *
- * @param array    $attributes The block attributes.
- * @param string   $content    The block content.
- * @param WP_Block $block      The block instance.
- * @return string The rendered output.
  */
     // Extract attributes
     $container_classes = !empty($attributes['containerClasses']) ? implode(' ', $attributes['containerClasses']) : '';
@@ -21,8 +17,7 @@
     $primary_button_classes = !empty($attributes['primaryButtonClasses']) ? implode(' ', $attributes['primaryButtonClasses']) : '';
     $left_image = $attributes['leftImage'] ?? [];
     $left_image_classes = !empty($attributes['leftImageClasses']) ? implode(' ', $attributes['leftImageClasses']) : '';
-    
-    ob_start();
+
     ?>
     <div <?php echo get_block_wrapper_attributes(); ?>>
         <div class="relative bg-gray-900 <?php echo esc_attr($container_classes); ?>">

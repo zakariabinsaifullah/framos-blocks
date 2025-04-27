@@ -20,8 +20,6 @@
     // Build the block classes
     $wrapper_attributes = get_block_wrapper_attributes();
     
-    // Start output buffering
-    ob_start();
     ?>
     <div <?php echo $wrapper_attributes; ?>>
         <div class="relative pl-16">

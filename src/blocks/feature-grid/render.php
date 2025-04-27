@@ -13,9 +13,6 @@
     $heading_classes      = ! empty( $attributes['headingClasses'] ) ? implode( ' ', $attributes['headingClasses'] ) : '';
     $title                = isset( $attributes['title'] ) ? $attributes['title'] : '';
     $title_classes        = ! empty( $attributes['titleClasses'] ) ? implode( ' ', $attributes['titleClasses'] ) : '';
-
-    // Start output buffering
-    ob_start();
     ?>
 
     <div <?php echo get_block_wrapper_attributes(); ?>>

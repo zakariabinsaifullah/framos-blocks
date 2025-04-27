@@ -25,7 +25,6 @@
     $secondaryButtonUrl      = isset( $attributes['secondaryButtonUrl'] ) ? $attributes['secondaryButtonUrl'] : null;
     $secondaryButtonClasses  = isset( $attributes['secondaryButtonClasses'] ) ? implode( ' ', $attributes['secondaryButtonClasses'] ) : '';
 
-    ob_start();
     ?>
 
     <div <?php echo get_block_wrapper_attributes(); ?>>
