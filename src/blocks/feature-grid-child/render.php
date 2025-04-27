@@ -12,9 +12,6 @@
     $desc_classes      = ! empty( $attributes['descClasses'] ) ? implode( ' ', $attributes['descClasses'] ) : '';
     $count             = isset( $attributes['count'] ) ? $attributes['count'] : '';
     $count_classes     = ! empty( $attributes['countClasses'] ) ? implode( ' ', $attributes['countClasses'] ) : '';
-
-    // Start output buffering
-    ob_start();
     ?>
 
     <div <?php echo get_block_wrapper_attributes(); ?>>

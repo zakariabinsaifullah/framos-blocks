@@ -28,7 +28,6 @@
         $wrapper_classes .= ' ' . $container_classes;
     }
     
-    ob_start();
     ?>
     <div class="<?php echo esc_attr($wrapper_classes); ?>">
         <?php if (!empty($heading)) : ?>
